@@ -1,0 +1,2087 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>交换生指南 | 明知大学</title>
+<meta name="description" content="明知大学交换生指南中文版首页，包含行前准备、学业、校园生活、文化活动与在韩生活五个栏目的入口。" />
+<style>
+
+  /* ── 设计令牌：取自 Material 设计系统（Google Sites 观感），仅在此处定义颜色 ── */
+  :root {
+    --brand:        #1a73e8;
+    --brand-strong: #1558b0;
+    --brand-soft:   #e8f0fe;
+    --ink:          #202124;
+    --ink-soft:     #5f6368;
+    --line:         #dadce0;
+    --bg:           #ffffff;
+    --bg-alt:       #f8f9fa;
+    --footer-bg:    #f1f3f4;
+    --radius:       8px;
+    --radius-lg:    12px;
+    --shadow-1:     0 1px 2px rgba(60,64,67,.16), 0 1px 3px rgba(60,64,67,.08);
+    --shadow-2:     0 1px 3px rgba(60,64,67,.16), 0 4px 12px rgba(60,64,67,.12);
+    --font: "Google Sans", "Roboto", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Microsoft JhengHei", -apple-system, system-ui, sans-serif;
+    --header-h: 64px;
+    --container: 1280px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  body.no-scroll { overflow: hidden; }
+  img, svg { display: block; max-width: 100%; }
+  [hidden] { display: none !important; }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1, h2, h3 { margin: 0; font-weight: 500; line-height: 1.35; letter-spacing: 0; }
+  p { margin: 0; text-wrap: pretty; }
+  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+  .container { max-width: var(--container); margin-inline: auto; padding-inline: 24px; }
+  :focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+  /* ── 顶栏（对应 Google Sites 顶部工具条） ─────────────────────── */
+  .sitetools {
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    position: sticky; top: 0; z-index: 40;
+  }
+  .sitetools-inner { display: flex; align-items: center; gap: 16px; height: 40px; }
+  .sitetools-spacer { flex: 1 1 auto; }
+  .sitetools-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 10px; border-radius: 6px;
+    font-size: 13px; color: var(--ink-soft);
+  }
+  .sitetools-btn:hover { background: var(--bg-alt); color: var(--ink); text-decoration: none; }
+  .sitetools-btn svg { width: 16px; height: 16px; }
+
+  /* ── 页头：站名 + 主菜单 ─────────────────────────────────────── */
+  .sitehead { border-bottom: 1px solid var(--line); background: var(--bg); position: relative; z-index: 30; }
+  .sitehead-inner { display: flex; align-items: center; gap: 20px; min-height: var(--header-h); }
+  .brand { display: flex; align-items: center; gap: 12px; padding-block: 10px; }
+  .brand:hover { text-decoration: none; }
+  .brand-mark {
+    width: 36px; height: 36px; flex: 0 0 36px;
+    border-radius: 50%;
+    background: var(--brand); color: #fff;
+    display: grid; place-items: center;
+    font-size: 13px; font-weight: 700; letter-spacing: .02em;
+  }
+  .brand-text { display: flex; flex-direction: column; }
+  .brand-name { font-size: 20px; font-weight: 500; color: var(--ink); line-height: 1.3; }
+  .brand-sub { font-size: 12px; color: var(--ink-soft); line-height: 1.3; }
+  .navtoggle {
+    margin-left: auto;
+    display: none; align-items: center; gap: 8px;
+    padding: 8px 12px; border-radius: 6px; font-size: 14px; color: var(--ink);
+  }
+  .navtoggle:hover { background: var(--bg-alt); }
+  .navtoggle svg { width: 18px; height: 18px; }
+
+  .mainnav { margin-left: auto; display: flex; align-items: stretch; }
+  .mainnav-item { position: relative; }
+  .mainnav-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 21px 14px;
+    font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em;
+    color: var(--ink-soft); white-space: nowrap;
+    border-bottom: 3px solid transparent;
+  }
+  .mainnav-link:hover { color: var(--ink); background: var(--bg-alt); text-decoration: none; }
+  .mainnav-link svg { width: 14px; height: 14px; transition: transform .18s ease; }
+  .mainnav-item.is-open > .mainnav-link,
+  .mainnav-item:focus-within > .mainnav-link {
+    color: var(--brand-strong); border-bottom-color: var(--brand); background: var(--brand-soft);
+  }
+  .mainnav-item.is-open > .mainnav-link svg,
+  .mainnav-item:focus-within > .mainnav-link svg { transform: rotate(180deg); }
+  .dropdown {
+    position: absolute; top: 100%; left: 0; min-width: 288px;
+    padding: 8px 0;
+    background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
+    box-shadow: var(--shadow-2);
+    display: none; z-index: 20;
+  }
+  .mainnav-item.is-open > .dropdown,
+  .mainnav-item:focus-within > .dropdown { display: block; }
+  .dropdown a {
+    display: block; padding: 10px 20px;
+    font-size: 14px; color: var(--ink);
+  }
+  .dropdown a:hover { background: var(--bg-alt); text-decoration: none; }
+  .dropdown .dd-group-label {
+    padding: 8px 20px 4px; font-size: 12px; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .dropdown hr { border: 0; border-top: 1px solid var(--line); margin: 6px 0; }
+
+  /* ── 移动端抽屉 ─────────────────────────────────────────────── */
+  .drawer-scrim { position: fixed; inset: 0; background: rgba(32,33,36,.5); z-index: 60; }
+  .drawer-scrim.is-open { display: block; }
+  .drawer {
+    position: fixed; top: 0; right: 0; bottom: 0; z-index: 70;
+    width: min(86vw, 340px);
+    background: var(--bg); box-shadow: var(--shadow-2);
+    transform: translateX(100%); transition: transform .22s ease;
+    overflow-y: auto; padding-bottom: 24px;
+  }
+  .drawer.is-open { transform: translateX(0); }
+  .drawer-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+  .drawer-head span { font-size: 15px; font-weight: 500; }
+  .drawer-close { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-soft); padding: 6px 8px; border-radius: 6px; }
+  .drawer-close:hover { background: var(--bg-alt); }
+  .drawer-close svg { width: 16px; height: 16px; }
+  .drawer-home { display: block; padding: 14px 16px; font-size: 15px; text-transform: uppercase; letter-spacing: .05em; font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--line); }
+  .drawer-home:hover { background: var(--bg-alt); text-decoration: none; }
+  .drawer-group {
+    width: 100%; display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 16px; font-size: 15px; text-transform: uppercase; letter-spacing: .05em;
+    font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--line); text-align: left;
+  }
+  .drawer-group:hover { background: var(--bg-alt); }
+  .drawer-group svg { width: 16px; height: 16px; color: var(--ink-soft); transition: transform .18s ease; }
+  .drawer-group[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .drawer-sub { display: none; border-bottom: 1px solid var(--line); background: var(--bg-alt); }
+  .drawer-sub.is-open { display: block; }
+  .drawer-sub a { display: block; padding: 11px 16px 11px 28px; font-size: 14px; color: var(--ink); }
+  .drawer-sub a:hover { background: #eef1f4; text-decoration: none; }
+
+  /* ── 横幅：对应原站首页顶部大图，图片位置留给编辑者替换 ────────────── */
+  .banner { position: relative; }
+  .banner-media {
+    min-height: clamp(220px, 30vw, 400px);
+    display: grid; place-items: center;
+    padding: 24px;
+    background: repeating-linear-gradient(135deg, #eceff1 0 14px, #e4e7ea 14px 28px);
+    border-bottom: 1px solid var(--line);
+  }
+  .banner-media .media-note {
+    padding: 6px 14px;
+    background: rgba(255,255,255,.88);
+    border: 1px dashed var(--line);
+    border-radius: 999px;
+    font-size: 13px; letter-spacing: .04em; color: var(--ink-soft);
+  }
+  .banner-plate { background: var(--ink); color: #fff; padding: clamp(28px, 4vw, 48px) 0; }
+  .banner-inner { max-width: 900px; }
+  .banner-plate h1 { margin: 10px 0 0; font-size: clamp(28px, 4.2vw, 46px); font-weight: 500; color: #fff; }
+  .banner-kicker { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.72); }
+  .banner-sub { margin-top: 12px; font-size: clamp(16px, 1.6vw, 20px); color: rgba(255,255,255,.88); }
+  .banner-actions { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .banner-actions .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 10px 20px; border-radius: 6px; border: 1px solid transparent;
+    font-size: 14px; font-weight: 500;
+  }
+  .banner-actions .btn-primary { background: var(--brand); color: #fff; border-color: var(--brand); }
+  .banner-actions .btn-primary:hover { background: var(--brand-strong); text-decoration: none; }
+  .banner-actions .btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,.62); }
+  .banner-actions .btn-outline:hover { background: rgba(255,255,255,.14); text-decoration: none; }
+
+  /* ── 内容区 ─────────────────────────────────────────────────── */
+  .section { padding-block: clamp(44px, 6vw, 72px); }
+  .section-head { margin-bottom: 20px; }
+  .section-en {
+    font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 6px;
+  }
+  .section h2 { font-size: clamp(22px, 2.4vw, 30px); }
+  .section-sub { margin-top: 10px; color: var(--ink-soft); max-width: 70ch; }
+
+  .media-box {
+    position: relative;
+    background: #202124; border-radius: var(--radius-lg);
+    aspect-ratio: 16 / 9;
+    display: grid; place-content: center; gap: 12px;
+    color: rgba(255,255,255,.78); text-align: center; overflow: hidden;
+  }
+  .media-box.is-wide { aspect-ratio: 16 / 9; }
+  .media-play {
+    width: 66px; height: 66px; margin-inline: auto;
+    border-radius: 50%; background: rgba(255,255,255,.94); color: #202124;
+    display: grid; place-items: center; box-shadow: var(--shadow-1);
+  }
+  .media-play svg { width: 28px; height: 28px; }
+  .media-caption { font-size: 13px; letter-spacing: .04em; }
+
+  .editpad {
+    border: 1px dashed var(--line);
+    border-left: 3px solid var(--brand);
+    border-radius: var(--radius);
+    background: var(--bg-alt);
+    padding: 20px 22px;
+  }
+  .editpad h3 { font-size: 16px; font-weight: 500; }
+  .editpad p { margin-top: 8px; font-size: 14px; color: var(--ink-soft); }
+  .chip-list { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    display: inline-flex; align-items: center;
+    margin-top: 12px; padding: 4px 12px; border-radius: 999px;
+    background: var(--brand-soft); color: var(--brand-strong);
+    font-size: 12px; letter-spacing: .04em;
+  }
+
+  /* ── 链接卡片网格 ─────────────────────────────────────────── */
+  .card-grid { display: grid; gap: 20px; }
+  .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .linkcard {
+    display: flex; flex-direction: column;
+    border: 1px solid var(--line); border-radius: var(--radius-lg);
+    background: var(--bg); padding: 22px;
+    transition: box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+  }
+  .linkcard:hover {
+    box-shadow: var(--shadow-2); border-color: transparent;
+    transform: translateY(-2px); text-decoration: none;
+  }
+  .linkcard-mark {
+    width: 40px; height: 40px; margin-bottom: 14px;
+    border-radius: 10px; background: var(--brand-soft); color: var(--brand-strong);
+    display: grid; place-items: center;
+  }
+  .linkcard-mark svg { width: 20px; height: 20px; }
+  .linkcard h3 { font-size: 17px; font-weight: 500; color: var(--ink); }
+  .linkcard p { margin-top: 8px; font-size: 14px; color: var(--ink-soft); }
+  .linkcard-url { margin-top: 14px; font-size: 12px; color: var(--brand-strong); }
+
+  .notice {
+    display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 14px;
+    background: var(--brand-soft); border-radius: var(--radius-lg); padding: 20px 22px;
+  }
+  .notice svg { width: 22px; height: 22px; color: var(--brand-strong); margin-top: 2px; }
+  .notice h3 { font-size: 16px; font-weight: 500; color: var(--brand-strong); }
+  .notice p { margin-top: 6px; font-size: 14px; color: #3b4252; }
+
+  /* ── 快速访问（源站首页的 QUICK ACCESS 网格） ─────────────── */
+  .quick { background: var(--bg-alt); border-block: 1px solid var(--line); }
+  .quick-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+  .quick-head h2 { font-size: clamp(20px, 2.2vw, 26px); }
+  .quick-head .section-en { margin-bottom: 0; }
+  .quick-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+  .quick-item {
+    display: block; padding: 18px 16px;
+    background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
+    color: var(--ink); transition: box-shadow .18s ease, transform .18s ease;
+  }
+  .quick-item:hover { box-shadow: var(--shadow-1); transform: translateY(-2px); text-decoration: none; }
+  .quick-item svg { width: 22px; height: 22px; color: var(--brand); margin-bottom: 10px; }
+  .quick-item span { display: block; font-size: 15px; font-weight: 500; }
+  .quick-item small { display: block; margin-top: 4px; font-size: 12px; color: var(--ink-soft); }
+
+  .campus-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .campus-card {
+    border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .campus-card .media-box { border-radius: 0; aspect-ratio: 16 / 9; }
+  .campus-body { padding: 20px 22px 22px; }
+  .campus-card h3 { font-size: 18px; font-weight: 500; }
+  .campus-card p { margin-top: 8px; font-size: 14px; color: var(--ink-soft); }
+
+  /* ── 信息表 ────────────────────────────────────────────────── */
+  .info-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .info-table th, .info-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .info-table th { width: 30%; font-weight: 500; color: var(--ink-soft); background: var(--bg-alt); }
+  .info-table td { color: var(--ink); }
+  .table-wrap { border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+
+  /* ── 待补充字段提示（正式发布前删除） ───────────────────────── */
+  .edit-note {
+    margin-top: 28px; padding: 20px 22px;
+    border: 1px dashed var(--line); border-radius: var(--radius-lg);
+    background: var(--bg-alt);
+  }
+  .edit-note h3 { font-size: 15px; font-weight: 500; }
+  .edit-note ul { margin: 10px 0 0; padding-left: 20px; font-size: 14px; color: var(--ink-soft); }
+  .edit-note li { margin-top: 6px; }
+  .edit-note code {
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 12px; background: #eef1f4; padding: 1px 6px; border-radius: 4px;
+  }
+
+  /* ── 页脚 ──────────────────────────────────────────────────── */
+  .pagefoot { background: var(--footer-bg); border-top: 1px solid var(--line); padding-block: 44px 36px; font-size: 13px; color: var(--ink-soft); }
+  .foot-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+  .foot-top .brand { padding-block: 0; }
+  .foot-links { display: flex; gap: 14px; flex-wrap: wrap; }
+  .foot-links a { font-size: 13px; }
+  .foot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding-top: 24px; }
+  .foot-grid h3 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); font-weight: 500; }
+  .foot-grid p { margin-top: 8px; line-height: 1.65; }
+  .foot-bottom { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .foot-bottom a { font-size: 13px; }
+
+  /* ── 响应式 ───────────────────────────────────────────────── */
+  @media (max-width: 1180px) {
+    .mainnav-link { padding-inline: 11px; font-size: 13px; }
+    .quick-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (max-width: 980px) {
+    .mainnav { display: none; }
+    .navtoggle { display: inline-flex; }
+    .cols-3, .cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .foot-grid { grid-template-columns: 1fr; gap: 22px; }
+  }
+  @media (max-width: 720px) {
+    .cols-2, .cols-3, .cols-4 { grid-template-columns: 1fr; }
+    .quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .campus-grid { grid-template-columns: 1fr; }
+    .banner { padding: 52px 0 44px; }
+    .info-table th { width: 40%; }
+  }
+  @media (max-width: 420px) {
+    .quick-grid { grid-template-columns: 1fr; }
+  }
+
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; margin: -1px;
+    padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
+/* ── 子页页头（与首页深色横幅同一视觉语言） ─────────────────── */
+.pagehero { background: var(--ink); color: #fff; padding: clamp(28px, 4vw, 48px) 0; }
+.pagehero h1 { color: #fff; font-size: clamp(24px, 3.2vw, 36px); margin-top: 6px; }
+.pagehero .crumb { font-size: 12px; letter-spacing: .06em; color: rgba(255,255,255,.62); }
+.pagehero .crumb a { color: rgba(255,255,255,.82); }
+.pagehero .banner-kicker { margin-top: 14px; color: rgba(255,255,255,.66); }
+.pagehero .lead { margin-top: 10px; max-width: 70ch; color: rgba(255,255,255,.88); font-size: clamp(15px, 1.5vw, 18px); }
+.hero-actions { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ── 按钮 ─────────────────────────────────────────────────── */
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; border-radius: 6px; border: 1px solid transparent; font-size: 14px; font-weight: 500; }
+.btn-primary { background: var(--brand); color: #fff; border-color: var(--brand); }
+.btn-primary:hover { background: var(--brand-strong); text-decoration: none; }
+.btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,.62); }
+.btn-outline:hover { background: rgba(255,255,255,.14); text-decoration: none; }
+.btn-quiet { background: var(--bg-alt); color: var(--ink); border-color: var(--line); }
+.btn-quiet:hover { background: #eef1f4; text-decoration: none; }
+
+/* ── 正文排版 ─────────────────────────────────────────────── */
+.prose { padding-block: clamp(30px, 4.4vw, 56px); max-width: 88ch; }
+.prose > * + * { margin-top: 14px; }
+.prose h3 { font-size: clamp(18px, 2vw, 22px); }
+.prose h3:not(:first-child), .prose h4:not(:first-child) { margin-top: 30px; }
+.prose h4 { font-size: 16px; font-weight: 500; }
+.prose p { font-size: 15.5px; }
+.prose ul, .prose ol { margin: 12px 0 0; padding-left: 22px; font-size: 15.5px; }
+.prose li { margin-top: 6px; }
+.prose li > ul { margin-top: 6px; }
+.prose strong { font-weight: 500; }
+.prose .notice { margin-top: 22px; }
+.prose .card-grid { margin-top: 16px; }
+.prose .table-wrap { margin-top: 16px; }
+.prose .linkcard h3 { font-size: 16px; }
+.prose .qa { border-left: 3px solid var(--brand-soft); padding: 2px 0 2px 16px; margin-top: 20px; }
+.prose .qa p { margin-top: 6px; font-size: 15px; color: var(--ink-soft); }
+.checklist { list-style: none; padding-left: 0 !important; }
+.checklist li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; }
+.checklist li::before { content: ''; width: 15px; height: 8px; margin-top: 6px; border-left: 2px solid var(--brand); border-bottom: 2px solid var(--brand); transform: rotate(-45deg); }
+.steps { counter-reset: s; list-style: none; padding-left: 0 !important; }
+.steps li { position: relative; padding-left: 36px; margin-top: 14px; }
+.steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 0; top: 1px; width: 24px; height: 24px; border-radius: 50%; background: var(--brand-soft); color: var(--brand-strong); font-size: 12px; display: grid; place-items: center; }
+.course-list { list-style: none; padding-left: 0 !important; columns: 2; column-gap: 30px; margin-top: 12px; }
+.course-list li { break-inside: avoid; position: relative; padding-left: 16px; margin-top: 7px; font-size: 14.5px; }
+.course-list li::before { content: ''; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--brand); opacity: .8; }
+.pendingblock { margin-top: 26px; padding: 22px; border: 1px dashed var(--line); border-left: 3px solid var(--brand); border-radius: var(--radius-lg); background: var(--bg-alt); }
+.pendingblock h3 { font-size: 17px; }
+.pendingblock p { margin-top: 10px; font-size: 14.5px; color: var(--ink-soft); }
+.pendingblock .btn { margin-top: 4px; }
+
+/* ── 站点工具条与搜索 ──────────────────────────────────────── */
+.searchwrap { border-bottom: 1px solid var(--line); background: var(--bg-alt); }
+.searchwrap-inner { padding-block: 18px; }
+.searchform { display: flex; gap: 10px; flex-wrap: wrap; }
+.searchinput { flex: 1 1 280px; min-width: 0; padding: 11px 14px; font-size: 15px; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--ink); }
+.searchresults { margin-top: 12px; }
+.searchhint { font-size: 14px; color: var(--ink-soft); }
+.searchlist { list-style: none; margin: 0; padding: 0; }
+.searchlist li { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.searchmeta { font-size: 12px; letter-spacing: .04em; color: var(--ink-soft); }
+.searchcancel { margin-top: 12px; font-size: 13px; color: var(--ink-soft); }
+
+/* ── 首页补充 ─────────────────────────────────────────────── */
+.home-note { padding-block: 0; }
+.topic-card ul { margin: 10px 0 0; padding-left: 18px; font-size: 13.5px; color: var(--ink-soft); }
+.topic-card ul li { margin-top: 4px; }
+
+@media (max-width: 720px) {
+  .pagehero { padding: 28px 0; }
+  .prose { padding-block: 32px; }
+  .course-list { columns: 1; }
+}
+
+
+/* 单文件站点路由 */
+.site-page { display: none; }
+.site-page.is-active { display: block; }
+</style>
+<noscript><style>.site-page { display: block; }</style></noscript>
+<style>
+/* 防横向溢出：长英文地址、表格与右侧抽屉 */
+html, body { max-width: 100%; overflow-x: hidden; }
+body { overflow-wrap: break-word; }
+img, svg, table, pre, code { max-width: 100%; }
+.container { max-width: 100%; }
+.card-grid > *, .quick-grid > *, .campus-grid > *, .foot-grid > *, .banner-inner { min-width: 0; }
+.prose, .prose p, .prose li, .prose td, .prose th, .linkcard, .linkcard p, .quick-item, .campus-card p { overflow-wrap: anywhere; }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.info-table { table-layout: fixed; }
+.info-table th { width: 34%; overflow-wrap: anywhere; }
+.info-table td { overflow-wrap: anywhere; }
+.searchlist li { min-width: 0; }
+.searchlist a, .searchmeta { overflow-wrap: anywhere; min-width: 0; }
+@media (max-width: 720px) {
+  .info-table th { width: 42%; }
+  .prose { padding-inline: 0; }
+}
+/* ── 站内分页：所有栏目在同一个中文站内切换，不跳转英文站 ───── */
+.site-page { display: none; }
+.site-page.is-active { display: block; }
+</style>
+</head>
+<body data-page="home">
+<a class="visually-hidden" href="#main">跳到主要内容</a>
+
+<div class="sitetools"><div class="container sitetools-inner">
+  <button class="sitetools-btn" type="button" data-search-btn><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.4"/><path d="m15.6 15.6 4 4" stroke-linecap="round"/></svg> 搜索此站点</button>
+  <button class="sitetools-btn" type="button" data-files-btn><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6.5 3.6h7l4.5 4.5v12.3h-11.5z" stroke-linejoin="round"/><path d="M13.3 3.8v4.6h4.6"/></svg> 嵌入文件</button>
+  <span class="sitetools-spacer"></span>
+  <span class="visually-hidden" data-tools-hint></span>
+</div></div>
+<div class="searchwrap" data-search-panel hidden><div class="container searchwrap-inner">
+  <form class="searchform" data-search-form role="search">
+    <label class="visually-hidden" for="siteSearch">搜索本站页面（中文名或英文原站页名）</label>
+    <input id="siteSearch" class="searchinput" type="search" name="q" placeholder="输入页面名称，例如 签证、住宿、Calendar" data-search-input />
+    <button class="btn btn-primary" type="submit">搜索</button>
+  </form>
+  <div class="searchresults" data-search-results><p class="searchhint">输入关键字后按回车，结果会列在这里。</p></div>
+  <button class="searchcancel" type="button" data-search-close>关闭</button>
+</div></div>
+
+<header class="sitehead" id="site-header"><div class="container sitehead-inner">
+  <a class="brand" href="#index">
+    <span class="brand-mark">MJU</span>
+    <span class="brand-text"><span class="brand-name">交换生指南</span><span class="brand-sub">明知大学 · Exchange Student Guide</span></span>
+  </a>
+  <nav class="mainnav" aria-label="主导航"><div class="mainnav-item"><a class="mainnav-link" href="#index">首页</a></div><div class="mainnav-item"><a class="mainnav-link" href="#admission">行前准备 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m7 10 5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="dropdown"><div class="dd-group-label">BEFORE ARRIVIAL</div><a href="#admission">入学手续</a><a href="#visa-checklist">签证核对清单</a><a href="#exchange-student-visa">交换生签证</a><a href="#visa-info">签证信息</a><a href="#housing">住宿</a><a href="#nhis">国民健康保险</a></div></div><div class="mainnav-item"><a class="mainnav-link" href="#academic-calendar">学业 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m7 10 5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="dropdown"><div class="dd-group-label">ACADEMICS</div><a href="#academic-calendar">行事历</a><a href="#msi">MSI（课表）</a><a href="#gradins-credits">成绩与学分</a><a href="#syllabus26-fall">课程大纲（26 秋季）</a><a href="#course-registration">选课流程</a><a href="#course-list">课程列表</a><a href="#mju-essential-app-sites">常用 App 与网站</a><a href="#national-holidays">法定假日</a><a href="#klec">KLEC 韩语中心</a></div></div><div class="mainnav-item"><a class="mainnav-link" href="#seoul-campus">校园生活 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m7 10 5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="dropdown"><div class="dd-group-label">CAMPUS LIFE</div><a href="#seoul-campus">首尔校区</a><a href="#yongin-campus">龙仁校区</a><a href="#oulami">OULAMI</a><a href="#gli">GLI</a></div></div><div class="mainnav-item"><a class="mainnav-link" href="#cultural-activities">文化活动 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m7 10 5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="dropdown"><div class="dd-group-label">CULTURAL ACTIVITIES</div><a href="#cultural-activities">文化活动总览</a><a href="#taekwondo">跆拳道</a><a href="#games-day">运动游戏日</a><a href="#korean-tutoring">韩语辅导</a></div></div><div class="mainnav-item"><a class="mainnav-link" href="#part-time-works">在韩生活 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m7 10 5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="dropdown"><div class="dd-group-label">LIVING IN KOREA</div><a href="#part-time-works">兼职打工</a><a href="#rc-resident-card">外国人登录证</a><a href="#immigration">出入境事务</a><a href="#emergency">紧急联系</a><a href="#apps">常用 App</a><a href="#transportation">交通出行</a><a href="#counseling-options-in-seoul">首尔心理咨询资源</a></div></div></nav>
+  <button class="navtoggle" type="button" data-nav-open aria-expanded="false" aria-controls="navDrawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg> 菜单</button>
+</div></header>
+<div class="drawer-scrim" data-drawer-scrim hidden></div>
+<aside class="drawer" id="navDrawer" data-drawer aria-hidden="true" aria-label="移动端导航"><div class="drawer-head"><span>菜单</span><button class="drawer-close" type="button" data-nav-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg> 关闭</button></div><a class="drawer-home" href="#index">首页</a><button class="drawer-group" type="button" aria-controls="dg-0" aria-expanded="false">行前准备 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m7 10 5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="drawer-sub" id="dg-0"><a href="#admission">入学手续</a><a href="#visa-checklist">签证核对清单</a><a href="#exchange-student-visa">交换生签证</a><a href="#visa-info">签证信息</a><a href="#housing">住宿</a><a href="#nhis">国民健康保险</a></div><button class="drawer-group" type="button" aria-controls="dg-1" aria-expanded="false">学业 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m7 10 5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="drawer-sub" id="dg-1"><a href="#academic-calendar">行事历</a><a href="#msi">MSI（课表）</a><a href="#gradins-credits">成绩与学分</a><a href="#syllabus26-fall">课程大纲（26 秋季）</a><a href="#course-registration">选课流程</a><a href="#course-list">课程列表</a><a href="#mju-essential-app-sites">常用 App 与网站</a><a href="#national-holidays">法定假日</a><a href="#klec">KLEC 韩语中心</a></div><button class="drawer-group" type="button" aria-controls="dg-2" aria-expanded="false">校园生活 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m7 10 5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="drawer-sub" id="dg-2"><a href="#seoul-campus">首尔校区</a><a href="#yongin-campus">龙仁校区</a><a href="#oulami">OULAMI</a><a href="#gli">GLI</a></div><button class="drawer-group" type="button" aria-controls="dg-3" aria-expanded="false">文化活动 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m7 10 5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="drawer-sub" id="dg-3"><a href="#cultural-activities">文化活动总览</a><a href="#taekwondo">跆拳道</a><a href="#games-day">运动游戏日</a><a href="#korean-tutoring">韩语辅导</a></div><button class="drawer-group" type="button" aria-controls="dg-4" aria-expanded="false">在韩生活 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m7 10 5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="drawer-sub" id="dg-4"><a href="#part-time-works">兼职打工</a><a href="#rc-resident-card">外国人登录证</a><a href="#immigration">出入境事务</a><a href="#emergency">紧急联系</a><a href="#apps">常用 App</a><a href="#transportation">交通出行</a><a href="#counseling-options-in-seoul">首尔心理咨询资源</a></div></aside>
+<main id="main"><div class="site-page" data-page="home" data-title="交换生指南 | 明知大学"><section class="banner">
+  <div class="banner-media" data-banner-target>
+    <span class="media-note">页面横幅图位置 · 原站使用校园实景照片</span>
+  </div>
+  <div class="banner-plate">
+    <div class="container banner-inner">
+      <p class="banner-kicker">明知大学 · 国际交流处</p>
+      <h1>交换生指南</h1>
+      <p class="banner-sub">你的明知大学交换生活，从这里开始</p>
+      <div class="banner-actions">
+        
+        <a class="btn btn-outline" href="#contact">联系国际交流处</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-en">Your Journey Begins at Myongji</p>
+      <h2>你的旅程，从明知开始</h2>
+      <p class="section-sub">原站首页在此处嵌入迎新影片《Your Journey Begins at Myongji》。中文站保留同一中央单栏、16:9 版式，可把下方占位块替换为视频链接或上传的文件。</p>
+    </div>
+    <div class="media-box">
+      <div class="media-play"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6.5 18 12l-9 5.5z" fill="currentColor"/></svg></div>
+      <p class="media-caption">迎新影片占位 · 16:9 · 《Your Journey Begins at Myongji》</p>
+    </div>
+  </div>
+</section>
+
+<section class="section quick">
+  <div class="container">
+    <div class="quick-head">
+      <h2>快速进入</h2>
+      <p class="section-en">Quick Access</p>
+    </div>
+    <div class="quick-grid">
+      <a class="quick-item" href="#academic-calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4" y="5.4" width="16" height="14.6" rx="2"/><path d="M4 10h16M8.6 3.8v3.2M15.4 3.8v3.2"/></svg><span>行事历</span><small>Academic Calendar</small></a>
+      <a class="quick-item" href="#course-registration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4.4 5.4h6.1v14.2H4.4zM13.5 5.4h6.1v14.2h-6.1z" stroke-linejoin="round"/></svg><span>选课流程</span><small>Course Registration</small></a>
+      <a class="quick-item" href="#rc-resident-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6.5 3.6h7l4.5 4.5v12.3h-11.5z" stroke-linejoin="round"/><path d="M13.3 3.8v4.6h4.6"/></svg><span>外国人登录证</span><small>Residence Card</small></a>
+      <a class="quick-item" href="#nhis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M12 10.8v5.2" stroke-linecap="round"/><circle cx="12" cy="8" r=".9" fill="currentColor" stroke="none"/></svg><span>国民健康保险</span><small>NHIS</small></a>
+      <a class="quick-item" href="#course-list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M10.5 13.5 13.5 10.5" stroke-linecap="round"/><path d="M9.6 7.4l1.2-1.2a4 4 0 0 1 5.6 5.6l-1.2 1.2" stroke-linecap="round"/><path d="M14.4 16.6l-1.2 1.2a4 4 0 0 1-5.6-5.6l1.2-1.2" stroke-linecap="round"/></svg><span>课程列表</span><small>Course List</small></a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-en">Office of International Affairs</p>
+      <h2>国际交流处与常用入口</h2>
+      <p class="section-sub">以下三个入口属于韩国明知大学官方系统与文件，保留原有名称，点击后打开官方页面。</p>
+    </div>
+    <div class="card-grid cols-3">
+      <a class="linkcard" href="https://international.mju.ac.kr/index.php?sMenu=kor" target="_blank" rel="noopener">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M3.6 12h16.8M12 3.4c2.4 2.6 2.4 14.4 0 17.2-2.4-2.8-2.4-14.6 0-17.2z"/></svg></span>
+        <h3>国际交流处官网</h3>
+        <p>部门介绍、公告与联系方式入口。</p>
+        <p class="linkcard-url">international.mju.ac.kr</p>
+      </a>
+      <a class="linkcard" href="https://drive.google.com/file/d/1i1nx1nXSyfApAdHMjk_tlvAWTA0C6XS8/view?usp=drive_link" target="_blank" rel="noopener">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6.5 3.6h7l4.5 4.5v12.3h-11.5z" stroke-linejoin="round"/><path d="M13.3 3.8v4.6h4.6"/></svg></span>
+        <h3>校方资料表（Fact Sheet）</h3>
+        <p>交换项目的基本信息文件。</p>
+        <p class="linkcard-url">Google Drive · 校方文件</p>
+      </a>
+      <a class="linkcard" href="https://sso1.mju.ac.kr/login.do?redirect_uri=https://portal.mju.ac.kr/proc/Login.eps" target="_blank" rel="noopener">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4.4 5.4h6.1v14.2H4.4zM13.5 5.4h6.1v14.2h-6.1z" stroke-linejoin="round"/></svg></span>
+        <h3>MSI 学生信息系统</h3>
+        <p>Myongji Student Information System，登录后可查课表与成绩。</p>
+        <p class="linkcard-url">sso1.mju.ac.kr</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="notice">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3.6 21 19.4H3z" stroke-linejoin="round"/><path d="M12 9.6v4.2" stroke-linecap="round"/><circle cx="12" cy="16.6" r=".9" fill="currentColor" stroke="none"/></svg>
+      <div>
+        <h3>重要提醒</h3>
+        <p>选课、改课与退课只能在规定的期间内办理，国际交流处在系统限制外无法协助；迎新、文化体验活动与结业式均需出席；外国人登录证（RC）等行事历以外的安排会以邮件通知。</p>
+        <p><a href="#academic-calendar">查看行事历页面 →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-en">Browse by topic</p>
+      <h2>按栏目浏览</h2>
+      <p class="section-sub">整站分为五个栏目，点击任一页面打开对应的中文页；站内每个条目都指向本中文站内的中文页面。</p>
+    </div>
+    <div class="card-grid cols-3">
+      <a class="linkcard topic-card" href="#admission">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6.5 3.6h7l4.5 4.5v12.3h-11.5z" stroke-linejoin="round"/><path d="M13.3 3.8v4.6h4.6"/></svg></span>
+        <h3>行前准备</h3>
+        <p>入学手续、签证核对清单、交换生签证与签证信息、住宿、国民健康保险。</p>
+        <ul><li>入学手续</li><li>交换生签证（D-2-6）</li><li>住宿</li><li>国民健康保险（NHIS）</li></ul>
+      </a>
+      <a class="linkcard topic-card" href="#academic-calendar">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4" y="5.4" width="16" height="14.6" rx="2"/><path d="M4 10h16M8.6 3.8v3.2M15.4 3.8v3.2"/></svg></span>
+        <h3>学业</h3>
+        <p>行事历、MSI 课程大纲与课表、成绩与学分、课程大纲与课程列表、选课流程、常用 App 与网站、法定假日、KLEC。</p>
+        <ul><li>行事历</li><li>选课流程</li><li>课程列表</li><li>KLEC 韩语中心</li></ul>
+      </a>
+      <a class="linkcard topic-card" href="#seoul-campus">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4.5 10.5 12 4.2l7.5 6.3v8.9h-15z" stroke-linejoin="round"/></svg></span>
+        <h3>校园生活</h3>
+        <p>首尔校区、龙仁（自然科学校区）、OULAMI 同伴项目、GLI 全球领导力项目。</p>
+        <ul><li>首尔校区</li><li>龙仁校区</li><li>OULAMI</li><li>GLI</li></ul>
+      </a>
+      <a class="linkcard topic-card" href="#cultural-activities">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="9.4" cy="9" r="3.4"/><path d="M3.8 19.4c0-3.1 2.5-5.6 5.6-5.6s5.6 2.5 5.6 5.6" stroke-linecap="round"/><path d="M16 6.2a3.2 3.2 0 0 1 0 6.2M17.4 19.4c0-2-1.1-3.8-2.7-4.8" stroke-linecap="round"/></svg></span>
+        <h3>文化活动</h3>
+        <p>跆拳道、运动游戏日、韩语辅导等文化活动页面。</p>
+        <ul><li>文化活动总览</li><li>跆拳道</li><li>运动游戏日</li><li>韩语辅导</li></ul>
+      </a>
+      <a class="linkcard topic-card" href="#transportation">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4.4" y="4.6" width="15.2" height="11.6" rx="2"/><path d="M4.4 11h15.2M8 16.4v2.4M16 16.4v2.4" stroke-linecap="round"/></svg></span>
+        <h3>在韩生活</h3>
+        <p>兼职打工、外国人登录证、出入境事务、紧急联系、常用 App、交通出行、首尔心理咨询资源。</p>
+        <ul><li>交通出行</li><li>外国人登录证（RC）</li><li>出入境事务</li><li>常用 App</li></ul>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="campuses">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-en">Contact</p>
+      <h2>两校区联系方式</h2>
+    </div>
+    <div class="campus-grid">
+      <div class="campus-card">
+        <div class="media-box"><p class="media-caption">首尔校区图位置</p></div>
+        <div class="campus-body">
+          <h3>SEOUL CAMPUS</h3>
+          <p>Office of International Affairs, 34 Geobukgol-ro, Seodaemun-gu, Seoul, 03674, KOREA</p>
+          <p>E-mail: <a href="mailto:mju_inbound@mju.ac.kr">mju_inbound@mju.ac.kr</a></p>
+          <p><a href="#seoul-campus">首尔校区页面 →</a></p>
+        </div>
+      </div>
+      <div class="campus-card">
+        <div class="media-box"><p class="media-caption">龙仁校区图位置</p></div>
+        <div class="campus-body">
+          <h3>YONGIN CAMPUS</h3>
+          <p>Office of International Students Support Team, 116 Myongji-ro, Cheoin-gu, Yongin-si, Gyeonggi-do, 17058, KOREA</p>
+          <p><a href="#yongin-campus">龙仁校区页面 →</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="edit-note">
+      <h3>关于本中文站</h3>
+      <ul>
+        <li>本中文站根据明知大学英文交换生指南（Google Sites）翻译，版式、配色与栏目层级对齐原站；站内所有栏目链接都指向本中文站的中文页面，不跳转英文原站。</li>
+        <li>英文原文为课程名称、系统名称、地址与官方文件名称时，中文页保留原文并附中文说明，以便与原站核对。</li>
+        <li>沿用原站的做法：页面横幅图与迎新影片以占位块保留，图片与视频文件不在本中文站内。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div><div class="site-page" data-page="index" data-title="交换生指南 | 明知大学"><section class="banner">
+  <div class="banner-media" data-banner-target>
+    <span class="media-note">页面横幅图位置 · 原站使用校园实景照片</span>
+  </div>
+  <div class="banner-plate">
+    <div class="container banner-inner">
+      <p class="banner-kicker">明知大学 · 国际交流处</p>
+      <h1>交换生指南</h1>
+      <p class="banner-sub">你的明知大学交换生活，从这里开始</p>
+      <div class="banner-actions">
+        
+        <a class="btn btn-outline" href="#contact">联系国际交流处</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-en">Your Journey Begins at Myongji</p>
+      <h2>你的旅程，从明知开始</h2>
+      <p class="section-sub">原站首页在此处嵌入迎新影片《Your Journey Begins at Myongji》。中文站保留同一中央单栏、16:9 版式，可把下方占位块替换为视频链接或上传的文件。</p>
+    </div>
+    <div class="media-box">
+      <div class="media-play"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6.5 18 12l-9 5.5z" fill="currentColor"/></svg></div>
+      <p class="media-caption">迎新影片占位 · 16:9 · 《Your Journey Begins at Myongji》</p>
+    </div>
+  </div>
+</section>
+
+<section class="section quick">
+  <div class="container">
+    <div class="quick-head">
+      <h2>快速进入</h2>
+      <p class="section-en">Quick Access</p>
+    </div>
+    <div class="quick-grid">
+      <a class="quick-item" href="#academic-calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4" y="5.4" width="16" height="14.6" rx="2"/><path d="M4 10h16M8.6 3.8v3.2M15.4 3.8v3.2"/></svg><span>行事历</span><small>Academic Calendar</small></a>
+      <a class="quick-item" href="#course-registration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4.4 5.4h6.1v14.2H4.4zM13.5 5.4h6.1v14.2h-6.1z" stroke-linejoin="round"/></svg><span>选课流程</span><small>Course Registration</small></a>
+      <a class="quick-item" href="#rc-resident-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6.5 3.6h7l4.5 4.5v12.3h-11.5z" stroke-linejoin="round"/><path d="M13.3 3.8v4.6h4.6"/></svg><span>外国人登录证</span><small>Residence Card</small></a>
+      <a class="quick-item" href="#nhis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M12 10.8v5.2" stroke-linecap="round"/><circle cx="12" cy="8" r=".9" fill="currentColor" stroke="none"/></svg><span>国民健康保险</span><small>NHIS</small></a>
+      <a class="quick-item" href="#course-list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M10.5 13.5 13.5 10.5" stroke-linecap="round"/><path d="M9.6 7.4l1.2-1.2a4 4 0 0 1 5.6 5.6l-1.2 1.2" stroke-linecap="round"/><path d="M14.4 16.6l-1.2 1.2a4 4 0 0 1-5.6-5.6l1.2-1.2" stroke-linecap="round"/></svg><span>课程列表</span><small>Course List</small></a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-en">Office of International Affairs</p>
+      <h2>国际交流处与常用入口</h2>
+      <p class="section-sub">以下三个入口属于韩国明知大学官方系统与文件，保留原有名称，点击后打开官方页面。</p>
+    </div>
+    <div class="card-grid cols-3">
+      <a class="linkcard" href="https://international.mju.ac.kr/index.php?sMenu=kor" target="_blank" rel="noopener">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M3.6 12h16.8M12 3.4c2.4 2.6 2.4 14.4 0 17.2-2.4-2.8-2.4-14.6 0-17.2z"/></svg></span>
+        <h3>国际交流处官网</h3>
+        <p>部门介绍、公告与联系方式入口。</p>
+        <p class="linkcard-url">international.mju.ac.kr</p>
+      </a>
+      <a class="linkcard" href="https://drive.google.com/file/d/1i1nx1nXSyfApAdHMjk_tlvAWTA0C6XS8/view?usp=drive_link" target="_blank" rel="noopener">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6.5 3.6h7l4.5 4.5v12.3h-11.5z" stroke-linejoin="round"/><path d="M13.3 3.8v4.6h4.6"/></svg></span>
+        <h3>校方资料表（Fact Sheet）</h3>
+        <p>交换项目的基本信息文件。</p>
+        <p class="linkcard-url">Google Drive · 校方文件</p>
+      </a>
+      <a class="linkcard" href="https://sso1.mju.ac.kr/login.do?redirect_uri=https://portal.mju.ac.kr/proc/Login.eps" target="_blank" rel="noopener">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4.4 5.4h6.1v14.2H4.4zM13.5 5.4h6.1v14.2h-6.1z" stroke-linejoin="round"/></svg></span>
+        <h3>MSI 学生信息系统</h3>
+        <p>Myongji Student Information System，登录后可查课表与成绩。</p>
+        <p class="linkcard-url">sso1.mju.ac.kr</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="notice">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3.6 21 19.4H3z" stroke-linejoin="round"/><path d="M12 9.6v4.2" stroke-linecap="round"/><circle cx="12" cy="16.6" r=".9" fill="currentColor" stroke="none"/></svg>
+      <div>
+        <h3>重要提醒</h3>
+        <p>选课、改课与退课只能在规定的期间内办理，国际交流处在系统限制外无法协助；迎新、文化体验活动与结业式均需出席；外国人登录证（RC）等行事历以外的安排会以邮件通知。</p>
+        <p><a href="#academic-calendar">查看行事历页面 →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-en">Browse by topic</p>
+      <h2>按栏目浏览</h2>
+      <p class="section-sub">整站分为五个栏目，点击任一页面打开对应的中文页；站内每个条目都指向本中文站内的中文页面。</p>
+    </div>
+    <div class="card-grid cols-3">
+      <a class="linkcard topic-card" href="#admission">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6.5 3.6h7l4.5 4.5v12.3h-11.5z" stroke-linejoin="round"/><path d="M13.3 3.8v4.6h4.6"/></svg></span>
+        <h3>行前准备</h3>
+        <p>入学手续、签证核对清单、交换生签证与签证信息、住宿、国民健康保险。</p>
+        <ul><li>入学手续</li><li>交换生签证（D-2-6）</li><li>住宿</li><li>国民健康保险（NHIS）</li></ul>
+      </a>
+      <a class="linkcard topic-card" href="#academic-calendar">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4" y="5.4" width="16" height="14.6" rx="2"/><path d="M4 10h16M8.6 3.8v3.2M15.4 3.8v3.2"/></svg></span>
+        <h3>学业</h3>
+        <p>行事历、MSI 课程大纲与课表、成绩与学分、课程大纲与课程列表、选课流程、常用 App 与网站、法定假日、KLEC。</p>
+        <ul><li>行事历</li><li>选课流程</li><li>课程列表</li><li>KLEC 韩语中心</li></ul>
+      </a>
+      <a class="linkcard topic-card" href="#seoul-campus">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4.5 10.5 12 4.2l7.5 6.3v8.9h-15z" stroke-linejoin="round"/></svg></span>
+        <h3>校园生活</h3>
+        <p>首尔校区、龙仁（自然科学校区）、OULAMI 同伴项目、GLI 全球领导力项目。</p>
+        <ul><li>首尔校区</li><li>龙仁校区</li><li>OULAMI</li><li>GLI</li></ul>
+      </a>
+      <a class="linkcard topic-card" href="#cultural-activities">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="9.4" cy="9" r="3.4"/><path d="M3.8 19.4c0-3.1 2.5-5.6 5.6-5.6s5.6 2.5 5.6 5.6" stroke-linecap="round"/><path d="M16 6.2a3.2 3.2 0 0 1 0 6.2M17.4 19.4c0-2-1.1-3.8-2.7-4.8" stroke-linecap="round"/></svg></span>
+        <h3>文化活动</h3>
+        <p>跆拳道、运动游戏日、韩语辅导等文化活动页面。</p>
+        <ul><li>文化活动总览</li><li>跆拳道</li><li>运动游戏日</li><li>韩语辅导</li></ul>
+      </a>
+      <a class="linkcard topic-card" href="#transportation">
+        <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4.4" y="4.6" width="15.2" height="11.6" rx="2"/><path d="M4.4 11h15.2M8 16.4v2.4M16 16.4v2.4" stroke-linecap="round"/></svg></span>
+        <h3>在韩生活</h3>
+        <p>兼职打工、外国人登录证、出入境事务、紧急联系、常用 App、交通出行、首尔心理咨询资源。</p>
+        <ul><li>交通出行</li><li>外国人登录证（RC）</li><li>出入境事务</li><li>常用 App</li></ul>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="campuses">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-en">Contact</p>
+      <h2>两校区联系方式</h2>
+    </div>
+    <div class="campus-grid">
+      <div class="campus-card">
+        <div class="media-box"><p class="media-caption">首尔校区图位置</p></div>
+        <div class="campus-body">
+          <h3>SEOUL CAMPUS</h3>
+          <p>Office of International Affairs, 34 Geobukgol-ro, Seodaemun-gu, Seoul, 03674, KOREA</p>
+          <p>E-mail: <a href="mailto:mju_inbound@mju.ac.kr">mju_inbound@mju.ac.kr</a></p>
+          <p><a href="#seoul-campus">首尔校区页面 →</a></p>
+        </div>
+      </div>
+      <div class="campus-card">
+        <div class="media-box"><p class="media-caption">龙仁校区图位置</p></div>
+        <div class="campus-body">
+          <h3>YONGIN CAMPUS</h3>
+          <p>Office of International Students Support Team, 116 Myongji-ro, Cheoin-gu, Yongin-si, Gyeonggi-do, 17058, KOREA</p>
+          <p><a href="#yongin-campus">龙仁校区页面 →</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="edit-note">
+      <h3>关于本中文站</h3>
+      <ul>
+        <li>本中文站根据明知大学英文交换生指南（Google Sites）翻译，版式、配色与栏目层级对齐原站；站内所有栏目链接都指向本中文站的中文页面，不跳转英文原站。</li>
+        <li>英文原文为课程名称、系统名称、地址与官方文件名称时，中文页保留原文并附中文说明，以便与原站核对。</li>
+        <li>沿用原站的做法：页面横幅图与迎新影片以占位块保留，图片与视频文件不在本中文站内。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div><div class="site-page" data-page="admission" data-title="入学手续 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 行前准备</p>
+  <p class="banner-kicker">ADMISSION</p>
+  <h1>入学手续</h1>
+  <p class="lead">申请资格、提名与在线申请流程。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <h3>申请资格</h3>
+  <ul>
+    <li>目前在明知大学的合作院校就读本科项目</li>
+    <li>已完成至少一个全日制大学学年</li>
+    <li>满足语言能力要求（英语或韩语）</li>
+  </ul>
+
+  <h3>1. 获得母校提名</h3>
+  <p>如果你的条件符合母校的要求，母校会将你提名给明知大学。</p>
+
+  <h3>2. 申请明知大学交换项目</h3>
+  <p>在线提交申请：<a href="https://international.mju.ac.kr/enter/enter_eng_05.php?sMenu=eng25" target="_blank" rel="noopener">在线申请</a>。</p>
+  <p>另外需下载并填写 MJU 提名表（nomination form）。</p>
+
+  <h3>3. 按申请人类别提交申请材料</h3>
+  <p>原站此处以图片表格列出不同申请人类别所需的申请材料，该表格内容无法以文本形式读取。请打开查看完整表格。</p>
+
+  <h3>4. 语言能力要求</h3>
+  <p>申请人必须满足所选方向的最低语言能力要求，并提交有效的考试成绩；具体要求原站以图片形式给出，请查看原站页面。</p>
+  <h4>可免交语言成绩的情况</h4>
+  <p>在以下情况下，申请人可以免于提交语言考试成绩：</p>
+  <ul>
+    <li>申请人来自以英语为官方第一语言的国家；或</li>
+    <li>申请人来自合作院校，并提交母校出具的正式信函。</li>
+  </ul>
+  <p>该正式信函必须确认：申请人达到所要求的语言能力水平；申请人有能力跟修以英语或韩语授课的课程。文件须包含官方签名与校方印章。</p>
+
+  <h3>5. 完成在线申请 / 申请校内宿舍（龙仁校区）</h3>
+  <p>申请人需填写在线申请表，并以 PDF 格式上传所有必需文件的扫描件。</p>
+  <p>校内宿舍（龙仁校区）的申请由国际处统一安排；包括费用在内的详细信息，将在入学材料包之前单独提供（参见<a href="#housing">住宿</a>）。</p>
+
+  <h3>6. 接受录取</h3>
+  <p>如果你满足大学的录取要求，会收到一封附有 Offer of Place 文件的邮件；该文件可用于申请学生签证（D-2-6），详见<a href="#exchange-student-visa">交换生签证</a>。</p>
+</div>
+</div></div><div class="site-page" data-page="visa-checklist" data-title="签证核对清单 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 行前准备</p>
+  <p class="banner-kicker">VISA CHECKLIST</p>
+  <h1>签证核对清单</h1>
+  <p class="lead">交换生签证申请所需的材料清单。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3.6 21 19.4H3z" stroke-linejoin="round"/><path d="M12 9.6v4.2" stroke-linecap="round"/><circle cx="12" cy="16.6" r=".9" fill="currentColor" stroke="none"/></svg>
+    <div>
+      <h3>学生签证为「单次入境」</h3>
+      <p>使馆或领事馆签发的学生签证是「单次入境」签证，只有抵达韩国并取得外国人登录证（RC）之后，才能转换为多次入境签证。签证上出现的 “multiple” 字样，表示取得 RC 后具备更换为多次入境签证的资格。</p>
+      <p>首次持该签证入境韩国，以及在取得 RC 之前进行任何国际旅行时，请务必格外留意。</p>
+    </div>
+  </div>
+
+  <h3>交换生签证申请材料核对清单</h3>
+  <ul class="checklist">
+    <li>有效护照（有效期须比停留期至少多 6 个月）</li>
+    <li>填写完整的签证申请表</li>
+    <li>近期护照规格照片（符合规定的规格要求）</li>
+    <li>明知大学录取通知书或官方录取文件</li>
+    <li>财力证明（银行流水、奖学金证明等）</li>
+    <li>航班行程或出行计划</li>
+    <li>医疗保险证明</li>
+    <li>签证申请费缴费凭证</li>
+    <li>使馆或领事馆要求的补充材料（例如无犯罪记录证明、体检报告）</li>
+    <li>以往签证或居留许可的复印件（如适用）</li>
+    <li>紧急联系人与接收院校的联系方式</li>
+    <li>住宿安排证明</li>
+    <li>使馆或领事馆要求的其他任何文件</li>
+  </ul>
+
+  <p>请注意：签证申请所需的材料会因学生国籍以及所在国使馆、领事馆的具体要求而有所不同。建议直接向相关使馆确认最新、最准确的信息。</p>
+  <p>相关页面：<a href="#exchange-student-visa">交换生签证</a>（D-2-6 交换生签证说明）。</p>
+</div>
+</div></div><div class="site-page" data-page="exchange-student-visa" data-title="交换生签证 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 行前准备</p>
+  <p class="banner-kicker">EXCHANGE STUDENT VISA</p>
+  <h1>交换生签证</h1>
+  <p class="lead">D-2-6 交换生签证的申请要求与注意事项。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <h3>D-2-6：交换生签证</h3>
+  <p>所有参加交换项目的国际学生都需要申请学生入境签证；交换生对应的类别为 D-2-6 签证，必须在抵达韩国之前取得。</p>
+
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3.6 21 19.4H3z" stroke-linejoin="round"/><path d="M12 9.6v4.2" stroke-linecap="round"/><circle cx="12" cy="16.6" r=".9" fill="currentColor" stroke="none"/></svg>
+    <div>
+      <h3>务必先取得签证再入境</h3>
+      <p>学生<strong>必须</strong>在抵达韩国前持有有效的学生入境签证。</p>
+      <p>请勿先以旅游签证或免签旅游身份入境韩国——在韩国境内不会获发学生签证。</p>
+      <p>签证办理需要时间，在签证获批并签发之前，请勿预订机票。</p>
+    </div>
+  </div>
+
+  <h3>入学材料包</h3>
+  <p>国际交流处（OIA）会向所有拟录取学生寄送用于签证申请的入学材料包（含入学许可书、事业者登录证等文件）。请注意：入学许可书自签发之日起仅 3 个月内有效。</p>
+
+  <h3>核对入学许可书</h3>
+  <p>如果入学许可书上出现出生日期、姓名拼写、性别、护照号码（或你已更换护照）、交换期间等错误，请尽快联系我们更正。虽然我们尽力避免出错，但错误仍可能发生；带有这类错误的许可书一律无效，需要重新寄送一份，并且可能延误你的签证申请。</p>
+
+  <h3>申请要求与有效期</h3>
+  <p>各国的要求可能不同，强烈建议学生向当地的韩国使馆或领事馆咨询具体的签证要求。</p>
+  <p>交换生必须申请 D-2-6 签证。学生签证为单次入境签证，自签发之日起 90 天内有效。</p>
+
+  <h3>签证申请表（样例）</h3>
+  <p>填写签证申请表时，可参照原站提供的样例文件：<strong>D2-6 비자신청서.pdf</strong>（签证申请表样例）。该文件在原站以嵌入文件形式提供，请打开查看或下载。</p>
+  <p>常见问题解答：<a href="#visa-info">签证信息</a>；材料清单：<a href="#visa-checklist">签证核对清单</a>。</p>
+</div>
+</div></div><div class="site-page" data-page="visa-info" data-title="签证信息 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 行前准备</p>
+  <p class="banner-kicker">VISA INFO</p>
+  <h1>签证信息</h1>
+  <p class="lead">D-2-6 签证常见问题与停留期限说明。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <h3>D-2-6：交换生签证常见问题</h3>
+
+  <div class="qa">
+    <h4>1. 哪些人可以申请 D-2-6 签证？</h4>
+    <p>计划在韩国以全日制学位项目或交换项目学习 90 天以上的人。应在居住国，或在母校所在国申请 D-2 签证。</p>
+  </div>
+
+  <div class="qa">
+    <h4>2. 什么时候申请签证？</h4>
+    <p>D-2 签证（包括 D-2-6 与 D-2-8）仅签发单次入境，有效期为 3 个月。因此，请在入境日期前不超过 3 个月申请签证。</p>
+  </div>
+
+  <div class="qa">
+    <h4>3. 停留期限</h4>
+    <p>各大学的学业安排不同，签证有效期按出入境管理机关设定的标准统一标注；实际的有效期按期末考试日期之后 4 周计算。</p>
+    <p>每学期的学业安排可能变化，学生应以交换生指南官方站点上的最新、准确日期为准（参见<a href="#academic-calendar">行事历 · 行事历</a>）。</p>
+  </div>
+
+  <div class="qa">
+    <h4>Q1. 我的交换项目 9 月 1 日开始，但我想提前入境韩国个人旅行，可以吗？</h4>
+    <p>签证一旦签发即可使用。但如果你选择提前入境，获发的停留期限可能无法覆盖到项目结束；这种情况下需要前往韩国当地的出入境管理机关申请延长停留期限。</p>
+  </div>
+
+  <div class="qa">
+    <h4>Q2. 我刚拿到 D-2 签证，想先去韩国旅行几天、再回国，然后再次前往韩国参加交换项目，这会影响我的 D-2 签证吗？</h4>
+    <p>请注意，D-2 签证会在你首次入境韩国时被使用；若没有有效的外国人登录证，你从韩国离境时该签证即失效。如果仍要按上述行程安排，你需要为交换项目重新申请 D-2 签证。</p>
+  </div>
+
+  <p>相关页面：<a href="#exchange-student-visa">交换生签证</a>（D-2-6 交换生签证）、<a href="#visa-checklist">签证核对清单</a>（签证申请材料核对清单）。</p>
+</div>
+</div></div><div class="site-page" data-page="housing" data-title="住宿 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 行前准备</p>
+  <p class="banner-kicker">HOUSING</p>
+  <h1>住宿</h1>
+  <p class="lead">两校区住宿方式、宿舍日期与申请入口。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <h3>首尔校区</h3>
+  <p>首尔校区<strong>不提供校内宿舍申请</strong>。</p>
+
+  <h4>RAONSTAY（推荐合作住宿）</h4>
+  <p>RAONSTAY 是推荐合作住宿，历届与在读学生经常使用；可通过下面的网站查询并预订。</p>
+  <p><a href="https://raon-stay.com/" target="_blank" rel="noopener">前往 RAONSTAY 网站 &raquo;</a></p>
+
+  <h3>龙仁校区（自然科学校区）</h3>
+  <p>龙仁校区<strong>可以申请校内宿舍</strong>。</p>
+
+  <div class="table-wrap">
+    <table class="info-table">
+      <tbody>
+        <tr><th>房型</th><td>四人间（房内带独立卫生间），含 50 张餐券</td></tr>
+        <tr><th>入住日期（2026 春季学期）</th><td>2026 年 2 月 25 日（周三）</td></tr>
+        <tr><th>退宿日期（2026 春季学期）</th><td>2026 年 6 月 16 日（周二）</td></tr>
+        <tr><th>宿舍地址</th><td>Myongji University Natural Science Campus Dormitory, 116, Myongji-ro, Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea (17058)</td></tr>
+        <tr><th>宿舍电话</th><td>+82-31-330-6082</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>宿舍申请与官方链接</h3>
+  <p><a href="https://dorm.mju.ac.kr/dorm/index.do" target="_blank" rel="noopener">宿舍（龙仁校区）官方网站 · 仅韩文版</a></p>
+  <p>龙仁校区宿舍申请的具体办法与时间安排将在后续公布。</p>
+</div>
+</div></div><div class="site-page" data-page="nhis" data-title="国民健康保险（NHIS） | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 行前准备</p>
+  <p class="banner-kicker">NHIS (NATIONAL HEALTH INSURANCE)</p>
+  <h1>国民健康保险（NHIS）</h1>
+  <p class="lead">在韩外国学生健康保险的加入、豁免与保障范围。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <h3>国民健康保险服务（NHIS）</h3>
+  <p>所有国际学生在申请外国人登录证（原名 ARC）后，将自动加入国民健康保险服务（NHIS）。NHIS 是韩国的国家医疗保健服务，帮助覆盖与支持范围广泛的医疗服务与资源，包括部分药品需求（更多信息请参见下方手册）。</p>
+  <p>自 2021 年 3 月 1 日起，所有在韩停留的国际学生都必须加入韩国国民健康保险；即使国际学生未向 NHIS 申报，NHIS 也会自动完成登记。国际学生在完成外国人登录后会自动加入 NHIS。</p>
+
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3.6 21 19.4H3z" stroke-linejoin="round"/><path d="M12 9.6v4.2" stroke-linecap="round"/><circle cx="12" cy="16.6" r=".9" fill="currentColor" stroke="none"/></svg>
+    <div>
+      <h3>办理需要时间</h3>
+      <p>虽然注册会在申请登录证后自动进行，但 NHIS 的处理需要时间，通常要几周才能走完流程。在这段时间内，学生不受 NHIS 保障，需要自备单独的健康保险或旅行保险，以覆盖可能发生的健康与旅行相关费用与风险。在 NHIS 生效之前，学生需自行处理个人的健康或旅行需求。</p>
+    </div>
+  </div>
+
+  <h3>资料下载</h3>
+  <div class="card-grid cols-2">
+    <a class="linkcard" href="https://drive.google.com/file/d/1JugZ5sU-o1-aznh1BUB2KiFJS2WpvPq9/view?usp=sharing" target="_blank" rel="noopener">
+      <h3>NHIC_Info.PDF</h3>
+      <p class="linkcard-url">NHIS 说明手册</p>
+    </a>
+    <a class="linkcard" href="https://drive.google.com/file/d/1bHW5yLycsjbh1KhXiculZHG-Zwv3BAi2/view?usp=sharing" target="_blank" rel="noopener">
+      <h3>首尔外国人服务中心运营指南（英文版）</h3>
+      <p class="linkcard-url">Download (ENG)</p>
+    </a>
+    <a class="linkcard" href="https://drive.google.com/file/d/1fyyJgGL4z1oKt4_62yaTo14W6Op8QBqa/view?usp=sharing" target="_blank" rel="noopener">
+      <h3>首尔外国人服务中心运营指南（中文版）</h3>
+      <p class="linkcard-url">下载（中文）</p>
+    </a>
+    <a class="linkcard" href="https://drive.google.com/file/d/1_1Hupg-giFAzGnbdF8i2J4fmu_D3tH-s/view?usp=sharing" target="_blank" rel="noopener">
+      <h3>首尔外国人服务中心运营指南（韩文版）</h3>
+      <p class="linkcard-url">다운로드 (한글)</p>
+    </a>
+  </div>
+
+  <h3>免加入指南</h3>
+  <h4>适用对象</h4>
+  <ol>
+    <li>持有能覆盖海外急诊与住院费用的私人保险，保障范围与 NHIS 相近（须来自外国保险公司）的学生。</li>
+    <li>因政府间协议与保险政策，法国与日本学生可豁免 NHIS。</li>
+  </ol>
+  <h4>申请方式</h4>
+  <ul>
+    <li>填写 (i) 「外国人国民健康保险加入除外申请书」与 (ii) 「健康保险地区加入者资格丧失申报书」。</li>
+    <li>将说明你的保险保障范围的主要部分翻译成韩文。</li>
+    <li>前往外国人居民中心提交这些材料。</li>
+  </ul>
+  <p>中心信息：<a href="http://www.nhis.or.kr/english/wbheaa02100m01.do" target="_blank" rel="noopener">NHIS 英文网站</a>。请先致电 NHIS（电话 1577-1000）并准备材料。</p>
+  <p>请注意：在完成出入境登记并取得居留号码之前，无法申请该豁免；即使向 NHIS 提交了豁免申请，也可能不获批准。</p>
+
+  <h4>可豁免的保障类别</h4>
+  <ul>
+    <li><strong>由外国法律保障的医疗保险</strong>：法国（政府间协议）；日本（国家健康保险制度可报销参保人在海外发生的医疗费用，需提供日本健康保险卡）；美国与联合国（面向政府官员、军人／退休人员及其家属的医疗体系，需提供 Uniform card 或 Blue Cross Blue Shield 保险卡）。</li>
+    <li><strong>由外国保险保障的医疗保险</strong>：私人保险必须在韩国境外购买，且不得限制其在韩国的保障范围。注意：务必在文件的灰色区域手写填写 “for a maximum of one year” 与 “only once”。表格上需要两处签名。</li>
+  </ul>
+
+  <h4>申报书填写要点</h4>
+  <ul>
+    <li>姓名：须与外国人登录证（RC）上的姓名一致。</li>
+    <li>丧失日期：填写国民健康保险的起始日（请参考 NHIS 来信中提到的起始日期；如不清楚则留空）。</li>
+    <li>资格丧失代码：由外国法律保障的医疗保险 &lt;24&gt;；由外国保险保障的医疗保险 &lt;25&gt;。</li>
+    <li>签证状态：D-2-6（交换生）。</li>
+  </ul>
+
+  <h3>保险保障范围</h3>
+  <p>国际学生可以享受与韩国公民同等的保险待遇。保险服务覆盖最高 80% 的住院治疗与医疗服务，以及 30–70% 的门诊治疗与医疗服务。一般情况下，可报销的金额会在离开医疗机构结算时直接从医疗费用中扣除。</p>
+  <p>更多信息请访问 <a href="https://www.nhis.or.kr/english/wbheaa02600m01.do" target="_blank" rel="noopener">NHIS 官方页面（英文版）</a>。</p>
+</div>
+</div></div><div class="site-page" data-page="academic-calendar" data-title="行事历 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 学业</p>
+  <p class="banner-kicker">ACADEMIC CALENDAR</p>
+  <h1>行事历</h1>
+  <p class="lead">选课、改课与退课期间的重要提醒。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3.6 21 19.4H3z" stroke-linejoin="round"/><path d="M12 9.6v4.2" stroke-linecap="round"/><circle cx="12" cy="16.6" r=".9" fill="currentColor" stroke="none"/></svg>
+    <div>
+      <h3>重要提醒</h3>
+      <ul>
+        <li>请务必确认选课、改课与退课的时间段。除规定的选课、改课与退课期间外，国际交流处（OIA）因系统限制无法以任何理由提供协助。请仔细核对日期并按此选课，任何变更都必须在规定的变更期间内完成。</li>
+        <li>请确认迎新、文化体验活动与结业式的日期，出席是必须的。</li>
+        <li>行事历以外的安排（例如办理外国人登录证 RC 的时间）将通过邮件通知。</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>原站的这一页目前只包含上述提醒与两校区联系方式，并未列出具体日期表格。具体的选课、改课与退课日期，以及迎新、文化体验与结业式的安排，请以官方行事历与邮件通知为准，也可通过确认。</p>
+
+  <h3>相关页面</h3>
+  <p><a href="#course-registration">选课流程</a> · <a href="#course-list">课程列表</a> · <a href="#msi">MSI（课程大纲与课表）</a></p>
+</div>
+</div></div><div class="site-page" data-page="msi" data-title="MSI（课程大纲与课表） | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 学业</p>
+  <p class="banner-kicker">MSI (SYLLABUS & TIMETABLE)</p>
+  <h1>MSI（课程大纲与课表）</h1>
+  <p class="lead">在明知学生信息系统中查询课程大纲与课表。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <p>明知学生信息系统（MSI，Myongji Student Information System）用于查询课程大纲与课表，登录后还可查看成绩与学分。</p>
+
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M12 10.8v5.2" stroke-linecap="round"/><circle cx="12" cy="8" r=".9" fill="currentColor" stroke="none"/></svg>
+    <div>
+      <h3>登录入口</h3>
+      <p><a href="https://sso.mju.ac.kr/sso/auth?client_id=msi&response_type=code&state=1775112892972&tkn_type=normal&redirect_uri=https%3A%2F%2Fmsi.mju.ac.kr%2Findex_Myiweb.jsp" target="_blank" rel="noopener">进入 MSI（单点登录）</a></p>
+    </div>
+  </div>
+
+  <h3>PC 版：查询课程大纲与课表</h3>
+  <ol>
+    <li>访问明知大学 MSI 首页。</li>
+    <li>点击 Curriculum / Course（课程・科目）。</li>
+    <li>点击 Search for Syllabus（查询课程大纲）。</li>
+    <li>点击搜索图标，选择查询分类：课程编号 / 课程代码 / 课程名称 / 授课教师。</li>
+  </ol>
+
+  <h3>手机版：查询课程大纲与课表</h3>
+  <ol>
+    <li>访问明知大学 MSI 首页。</li>
+    <li>点击 Curriculum / Course 与 Search for Syllabus。</li>
+    <li>点击搜索图标，选择查询分类：课程编号 / 课程代码 / 课程名称 / 授课教师。</li>
+  </ol>
+
+  <p>选课相关流程请参见<a href="#course-registration">选课流程</a>，课程列表请参见<a href="#course-list">课程列表</a>。</p>
+</div>
+</div></div><div class="site-page" data-page="gradins-credits" data-title="成绩与学分 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 学业</p>
+  <p class="banner-kicker">GRADINGS & CREDITS</p>
+  <h1>成绩与学分</h1>
+  <p class="lead">成绩评定标准、学分换算与学分转换。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <h3>成绩评定</h3>
+  <p>学生的学业表现按四项不同标准评估：考试、作业、出勤与课堂参与。</p>
+  <p>明知大学的学则规定，要取得及格成绩，课堂出勤率须达到至少 70%。不过，每位教授可能采用不同的出勤政策，如遇此情况，学生应遵循教授的要求。</p>
+  <p>课程成绩一般按评分量表评定；原站以图片形式给出该评分量表，请打开查看。</p>
+
+  <h3>明知大学的学分</h3>
+  <p>韩国的学分制度可能与你的母校不同。在明知大学，1 学分相当于 15–16 个课时。多数情况下与 ECTS 的换算如下：1 MJU 学分 = 2 ECTS。</p>
+
+  <h3>学分转换</h3>
+  <p>成绩单会通过电子邮件寄送至你的母校，预计在学期结束后约一个月内完成。</p>
+  <p>除与合作院校另有约定外，交换学期取得的所有学分都会转换到你的母校。请注意，部分大学要求必须修读特定课程或科目，才能进行学分转换。</p>
+
+  <p>相关页面：<a href="#msi">MSI（课程大纲与课表）</a>（查询成绩与课表）、<a href="#course-registration">选课流程</a>（选课流程）。</p>
+</div>
+</div></div><div class="site-page" data-page="syllabus26-fall" data-title="课程大纲（26 秋季） | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 学业</p>
+  <p class="banner-kicker">SYLLABUS (26 FALL)</p>
+  <h1>课程大纲（26 秋季）</h1>
+  <p class="lead">上一学年的课程大纲资料，仅供参考。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M12 10.8v5.2" stroke-linecap="round"/><circle cx="12" cy="8" r=".9" fill="currentColor" stroke="none"/></svg>
+    <div>
+      <h3>仅为参考的上一学年资料</h3>
+      <p>原站此页提供的课程大纲来自上一学年（26 秋季），仅供同学们参考。在获录取并取得学号之后，可以登录 MSI（明知学生信息系统），通过课程搜索功能查看详细的课程大纲。</p>
+      <p>相关页面：<a href="#msi">MSI（课程大纲与课表）</a>（MSI 课程大纲与课表）、<a href="#course-list">课程列表</a>（课程列表）。</p>
+    </div>
+  </div>
+
+  <h3>首尔校区</h3>
+  <ul class="course-list">
+    <li>Financial Management</li>
+    <li>Organizational Behavior</li>
+    <li>Case Study of Global Management Strategies</li>
+    <li>Changes and Debates in International Relations</li>
+    <li>International Security</li>
+    <li>Principles of Economics</li>
+    <li>Media Research Methods</li>
+    <li>Media Literacy in Digital Age</li>
+    <li>English and American Fiction</li>
+    <li>Reading in British and American Literature</li>
+    <li>Asian History and Culture</li>
+    <li>Globalization and Social Change</li>
+    <li>Understanding International Politics</li>
+    <li>Introduction to Global Corporate Strategy</li>
+    <li>Korean History and Culture</li>
+    <li>Asian International Relations</li>
+    <li>Business and management</li>
+    <li>Introduction to Korean Grammar</li>
+    <li>Introduction to Korean Conversation</li>
+    <li>Introduction to Korean Reading</li>
+    <li>Introduction to Korean Application</li>
+    <li>Basic Korean Conversation</li>
+    <li>Basic Korean Reading</li>
+    <li>Basic Korean Application</li>
+    <li>Basic Korean Grammar</li>
+    <li>AI*SW Business（原站标注：课程名称已变更）</li>
+  </ul>
+
+  <h3>龙仁（自然科学校区）</h3>
+  <ul class="course-list">
+    <li>Introduction to Korean Reading</li>
+    <li>Introduction to Korean Conversation</li>
+    <li>Introduction to Korean Grammar</li>
+    <li>Architectural Design 5</li>
+    <li>Basic Design 2</li>
+    <li>Calculus 1</li>
+    <li>Chemistry 1</li>
+    <li>Physics 1</li>
+    <li>Statistics</li>
+    <li>Construction management</li>
+    <li>Contemporary History of Korea for Foreign Students</li>
+    <li>Engineering Mathmatics</li>
+    <li>English Conversation 1</li>
+    <li>Environmental Analytical Chemistry</li>
+    <li>Illustration 2</li>
+    <li>Information Design</li>
+    <li>Introduction to Smart Infrastructure Engineering</li>
+    <li>Structurual Mechanics</li>
+    <li>Transportation Planning</li>
+    <li>Zero Energy Design</li>
+    <li>Digital Animation</li>
+    <li>Digital Graphics</li>
+    <li>Fluid Mechanics</li>
+    <li>Introduction to Video 2</li>
+    <li>Motion Design 2</li>
+    <li>Operations Research of Transportation</li>
+    <li>Soil Mechanics</li>
+  </ul>
+
+  <h3>文件与说明</h3>
+  <p>原站每一门课程都对应一个 PDF 大纲文件（文件名如 “S Financial Management 25-2.pdf”“Y Calculus 1 25-2.pdf”，文件名前缀 S 代表首尔校区、Y 代表龙仁校区）。这些 PDF 是原站的嵌入文件，不在本中文站内，请打开查看或下载。</p>
+  <p>本页仅保留课程名称，未对课程内容与开课情况做任何推断；实际开课与选课请以当学期的系统信息为准。</p>
+</div>
+</div></div><div class="site-page" data-page="course-registration" data-title="选课流程 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 学业</p>
+  <p class="banner-kicker">COURSE REGISTRATION</p>
+  <h1>选课流程</h1>
+  <p class="lead">登录、搜索与申请课程的完整操作说明。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <h3>概览</h3>
+  <p>请阅读以下说明，了解在明知大学选课的流程与操作方法。</p>
+  <p>请注意：韩国的选课竞争非常激烈，因此强烈建议同学们在参加本项目时准备好备选方案，以应对第一志愿课程无法选上的可能。</p>
+
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3.6 21 19.4H3z" stroke-linejoin="round"/><path d="M12 9.6v4.2" stroke-linecap="round"/><circle cx="12" cy="16.6" r=".9" fill="currentColor" stroke="none"/></svg>
+    <div>
+      <h3>注意事项</h3>
+      <ul>
+        <li>选课日期按院系不同而有所差异。</li>
+        <li>交换生可以在明知大学本校学生之前选课，与残障学生同批开放。</li>
+        <li>每个选课日的可注册人数有限（每门课 4–5 人），以保证各院系学生的机会均等。</li>
+        <li>也就是说，交换生可以在开放的第一天，以及分配给自己院系的日期选课。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>选课日程</h3>
+  <div class="media-box is-wide">
+    <div class="media-play"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6.5 18 12l-9 5.5z" fill="currentColor"/></svg></div>
+    <p class="media-caption">原站此处嵌入选课操作演示视频 Course_Registration.mp4</p>
+  </div>
+
+  <h3>1-1 登录</h3>
+  <div class="table-wrap">
+    <table class="info-table">
+      <tbody>
+        <tr><th>ID</th><td>学号（例如 60249XXX）</td></tr>
+        <tr><th>密码</th><td>出生年月日 6 位数字（YYMMDD，例如 030712）</td></tr>
+        <tr><th>网址</th><td>https://class.mju.ac.kr（与以往相同，PC 与手机均可用）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul>
+    <li>各菜单可以切换语言（韩语、英语）。</li>
+    <li>如需找回密码，请使用 SSO 密码找回页面。</li>
+    <li>此前使用的应用已停止服务，需要通过手机网页浏览器访问：请在手机浏览器地址栏输入 https://class.mju.ac.kr。</li>
+  </ul>
+
+  <h3>1-2 首页</h3>
+  <ul>
+    <li>Pre-loaded Courses：即所谓「购物车」（预选课程）。</li>
+    <li>Course Registration：选课结果。</li>
+    <li>Course Search：课程搜索。</li>
+  </ul>
+
+  <h3>1-3 课程搜索</h3>
+  <ul>
+    <li>点击 “By Keyword”。</li>
+    <li>输入课程编号（Code）或课程名称。</li>
+    <li>确认正确的校区。</li>
+  </ul>
+
+  <h3>1-4 预选记录页面</h3>
+  <ul>
+    <li>若处于选课期间且已有提前写入的记录，该页面会显示为首页。</li>
+    <li>选课明细会标注为 [申请完成]。</li>
+    <li>申请之后，页面顶部的课程数与学分会更新。</li>
+    <li>可以更改预选课程的排列顺序。</li>
+  </ul>
+
+  <h3>2-1 添加课程</h3>
+  <ul>
+    <li>点击 “Bag”，将课程放入「预选课程」标签。</li>
+    <li>点击 “Apply” 完成选课（仅在正式选课期间可用）。</li>
+    <li>点击删除选课按钮时，会弹出确认窗口。</li>
+    <li>请注意：删除选课之后，参与人数不会立即变化，而会在每学期另行随机统一更新，请勿误操作。</li>
+  </ul>
+</div>
+</div></div><div class="site-page" data-page="course-list" data-title="课程列表 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 学业</p>
+  <p class="banner-kicker">COURSE LIST</p>
+  <h1>课程列表</h1>
+  <p class="lead">选课注意事项、韩语课程与课程信息表。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <h3>概览</h3>
+  <p>请阅读以下说明，了解在明知大学选课的更多信息与操作指引。</p>
+  <p>请注意：韩国的选课竞争非常激烈，因此强烈建议同学们在参加本项目时准备好备选方案，以应对第一志愿课程无法选上的可能。</p>
+
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3.6 21 19.4H3z" stroke-linejoin="round"/><path d="M12 9.6v4.2" stroke-linecap="round"/><circle cx="12" cy="16.6" r=".9" fill="currentColor" stroke="none"/></svg>
+    <div>
+      <h3>注意事项</h3>
+      <ul>
+        <li>选课前请仔细核对课程代码与时间表，因为部分课程名称相同，但以韩语授课。</li>
+        <li>课程对所有交换生开放，不受专业限制（但须确认课程要求）。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>韩语课程</h3>
+  <ul>
+    <li>Introduction（入门）：面向完全零基础的学生，无需任何韩语基础。</li>
+    <li>Basic（基础）：适合已学习韩语约 6 个月的学生。</li>
+  </ul>
+
+  <h3>课程信息表</h3>
+  <p>原站以嵌入文件形式提供课程信息表：<strong>3. COURSE INFO (26-2).xlsx</strong>。请打开查看或下载该文件。</p>
+
+  <h3>补充说明</h3>
+  <ul>
+    <li>（龙仁校区）在以韩语授课的课堂上，教授会提供英语口译，以帮助国际学生。</li>
+    <li>Global Civil and Environmental Engineering（全球土木与环境工程）专业全部以英语授课。</li>
+  </ul>
+
+  <p>相关页面：<a href="#course-registration">选课流程</a>（选课流程）、<a href="#syllabus26-fall">课程大纲（26 秋季）</a>（课程大纲）。</p>
+</div>
+</div></div><div class="site-page" data-page="mju-essential-app-sites" data-title="MJU 常用 App 与网站 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 学业</p>
+  <p class="banner-kicker">MJU ESSENTIAL APP & SITES</p>
+  <h1>MJU 常用 App 与网站</h1>
+  <p class="lead">Ucheck+、学生信息系统与 LMS。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <h3>Ucheck+</h3>
+  <ul>
+    <li>基于蓝牙（Beacon）室内定位的考勤认证系统。</li>
+    <li>在教室内通过智能手机完成位置认证后，可自动完成考勤。</li>
+    <li>多语言支持：应用语言会随设备设置自动切换，默认支持韩语与英语。</li>
+  </ul>
+
+  <h3>学生信息系统（MSI）</h3>
+  <p><a href="https://sso1.mju.ac.kr/" target="_blank" rel="noopener">sso1.mju.ac.kr</a></p>
+  <p>MSI 汇集了明知大学每位学生的全部信息，可以在其中查看自己的信息。</p>
+
+  <h3>LMS（学习管理系统）</h3>
+  <p>LMS 是在线课程、提交作业、参加考试与查看公告的必备系统。</p>
+  <p>各校使用的 LMS 平台可能不同，国际学生可以用学校账号登录使用。</p>
+
+  <p>相关页面：<a href="#msi">MSI（课程大纲与课表）</a>（课程大纲与课表查询）。</p>
+</div>
+</div></div><div class="site-page" data-page="national-holidays" data-title="法定假日 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 学业</p>
+  <p class="banner-kicker">NATIONAL HOLIDAYS</p>
+  <h1>法定假日</h1>
+  <p class="lead">韩国法定假日日历（原站以图片发布）。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M12 10.8v5.2" stroke-linecap="round"/><circle cx="12" cy="8" r=".9" fill="currentColor" stroke="none"/></svg>
+    <div>
+      <h3>此页内容以图片形式发布</h3>
+      <p>原站这一页以一张图片列出韩国的法定假日日历，图片内的日期文字无法以文本方式读取，因此本中文版无法转写具体日期。</p>
+      <p>请打开查看该日历图片，并以官方公布的日历为准。</p>
+    </div>
+  </div>
+  <p>相关页面：<a href="#academic-calendar">行事历</a>（行事历与重要提醒）。</p>
+</div>
+</div></div><div class="site-page" data-page="klec" data-title="KLEC 韩语中心 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 学业</p>
+  <p class="banner-kicker">KLEC</p>
+  <h1>KLEC 韩语中心</h1>
+  <p class="lead">韩语课程安排、学分计算与折扣。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <p>KLEC（韩语教育中心）为交换生提供韩语课程。日程安排（2025-2026，首尔与龙仁校区）在原站以图片形式给出，请打开查看日程表。</p>
+
+  <h3>按学习期限选择课程</h3>
+  <p>交换生可以根据自己的学习期限选择 KLEC 课程：</p>
+  <ul>
+    <li>春季入学的 1 学期学生：春季课程</li>
+    <li>春季入学的 2 学期学生：春季、夏季与秋季课程</li>
+  </ul>
+
+  <h3>学分信息</h3>
+  <p>每学期的总学分数不得超过 17 学分。每个 KLEC 课程为 6 学分。</p>
+  <ul>
+    <li>修读 1 个 KLEC 课程（6 学分）→ 最多可注册 11 个本科学分</li>
+    <li>修读 2 个 KLEC 课程（12 学分）→ 最多可注册 5 个本科学分</li>
+  </ul>
+
+  <h3>学分归属</h3>
+  <ul>
+    <li>春季与夏季课程 → 计入春季学期学分</li>
+    <li>秋季与冬季课程 → 计入秋季学期学分</li>
+  </ul>
+
+  <h3>费用优惠</h3>
+  <p>KLEC 课程仅在申请期间可选；交换生每个 KLEC 课程可享受 20% 折扣。</p>
+
+  <p><a href="https://klec.mju.ac.kr/main.php?sMenu=eng" target="_blank" rel="noopener">韩语教育中心（KLEC）官网（英文版）</a></p>
+</div>
+</div></div><div class="site-page" data-page="seoul-campus" data-title="首尔校区 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 校园生活</p>
+  <p class="banner-kicker">SEOUL CAMPUS</p>
+  <h1>首尔校区</h1>
+  <p class="lead">首尔校区建筑导览、校园指南与视频。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <p>原站首尔校区页面以校园图与“建筑号”清单介绍校区，并附校园指南文件、Notion 详细指南与校园视频。</p>
+
+  <h3>建筑号对照</h3>
+  <div class="table-wrap">
+    <table class="info-table">
+      <tbody>
+        <tr><th>1</th><td>Main Building（主楼）</td></tr>
+        <tr><th>2</th><td>Student Union Building（学生会馆）</td></tr>
+        <tr><th>3</th><td>Future and Convergence Building（未来融合馆）</td></tr>
+        <tr><th>4</th><td>International Building（国际馆）</td></tr>
+        <tr><th>5</th><td>Administration Building（行政馆）</td></tr>
+        <tr><th>8</th><td>Dormitory（宿舍）</td></tr>
+        <tr><th>9</th><td>Library（图书馆）</td></tr>
+        <tr><th>10</th><td>MCC (Myongji Campus Complex)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>校园指南</h3>
+  <p>原站嵌入《Myongji_University - Seoul Campus Guide.pdf》校园指南文件（嵌入文件不在本中文站内，请打开查看）。</p>
+  <p><a href="https://poised-quartz-16d.notion.site/Myongji-University-Seoul-Campus-Definitive-Guide-26bf96f4f51e8061a7ceff9e54d5bc53" target="_blank" rel="noopener">Seoul Campus Guide（Notion 详细指南）</a></p>
+
+  <h3>校园视频</h3>
+  <p><a href="https://www.youtube.com/watch?v=cvqSl8rNGqc" target="_blank" rel="noopener">校园视频 1（YouTube）</a> · <a href="https://www.youtube.com/watch?v=pV3-1bz9J1w" target="_blank" rel="noopener">校园视频 2（YouTube）</a></p>
+
+  <p>相关页面：<a href="#yongin-campus">龙仁校区</a>、<a href="#oulami">OULAMI 同伴项目</a>、<a href="#gli">GLI 全球领导力项目</a>。</p>
+</div>
+</div></div><div class="site-page" data-page="yongin-campus" data-title="龙仁校区 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 校园生活</p>
+  <p class="banner-kicker">YONGIN CAMPUS</p>
+  <h1>龙仁校区</h1>
+  <p class="lead">龙仁（自然科学校区）建筑号与宿舍楼。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <p>原站龙仁校区页面以校园图与建筑号清单介绍自然科学校区，并附宿舍楼清单与导览视频。</p>
+
+  <h3>建筑号对照</h3>
+  <div class="table-wrap">
+    <table class="info-table">
+      <tbody>
+        <tr><th>Y1</th><td>Engineering Building 1（工科 1 馆）</td></tr>
+        <tr><th>Y1</th><td>Student Union Hall（学生会馆）——原站清单中 Y1 同时标注了以上两个名称</td></tr>
+        <tr><th>Y3</th><td>Myeongjin Hall（明珍馆）</td></tr>
+        <tr><th>Y5</th><td>Engineering Building 5 (Medical Science Building)（工科 5 馆 · 医科学馆）</td></tr>
+        <tr><th>Y7</th><td>Gymnasium（体育馆）</td></tr>
+        <tr><th>Y8</th><td>Engineering Building 2 (Eco Bio Hall)（工科 2 馆 · Eco Bio Hall）</td></tr>
+        <tr><th>Y9</th><td>Hangbak Hall</td></tr>
+        <tr><th>Y12</th><td>Design &amp; Sculpture Center（设计与雕塑中心）</td></tr>
+        <tr><th>Y13</th><td>Engineering Building 4 (Environmental Hall)（工科 4 馆 · 环境馆）</td></tr>
+        <tr><th>Y16</th><td>Bangmok Memorial Hall</td></tr>
+        <tr><th>Y19</th><td>Engineering Building 3（工科 3 馆）</td></tr>
+        <tr><th>Y21</th><td>Student Welfare Center（学生福利中心）</td></tr>
+        <tr><th>Y22</th><td>chapel building（礼拜堂）</td></tr>
+        <tr><th>A</th><td>main Stadium（主体育场）</td></tr>
+        <tr><th>C</th><td>Small Stadium（小体育场）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>宿舍楼（宿舍区）</h3>
+  <div class="table-wrap">
+    <table class="info-table">
+      <tbody>
+        <tr><th>Y30</th><td>Myeonghyeon Hall</td></tr>
+        <tr><th>Y31</th><td>Myeongdeok Hall</td></tr>
+        <tr><th>Y32</th><td>Building 3（3 栋）</td></tr>
+        <tr><th>Y33</th><td>Building 4（4 栋）</td></tr>
+        <tr><th>Y34</th><td>Building 5（5 栋）</td></tr>
+        <tr><th>Y35</th><td>Welfare Building (Building B)（福利馆 · B 栋）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>校园导览</h3>
+  <p>导览视频与 Notion 指南由 OULAMI（明知大学国际交换生志愿社团）与 2025 秋季全球实习生制作：</p>
+  <p><a href="https://www.notion.so/Myongji-University-Yongin-Campus-Definitive-Guide-2a396a3f3f60801fa233f911ed15b505?source=copy_link" target="_blank" rel="noopener">Yongin Campus Guide（Notion 页面）</a></p>
+  <p><a href="https://www.youtube.com/watch?v=ygrp6mytWI8" target="_blank" rel="noopener">校园导览视频 1（YouTube）</a> · <a href="https://www.youtube.com/watch?v=pV3-1bz9J1w" target="_blank" rel="noopener">校园导览视频 2（YouTube）</a></p>
+  <p>原站另嵌入了两份视频文件（Frye Moura Isabella.mp4 与 캠퍼스 가이드 편집본.mp4），均为原站嵌入文件，不在本中文站内，请打开查看。</p>
+
+  <p>相关页面：<a href="#seoul-campus">首尔校区</a>、<a href="#housing">住宿 · 住宿</a>（宿舍申请）、<a href="#oulami">OULAMI 同伴项目</a>。</p>
+</div>
+</div></div><div class="site-page" data-page="oulami" data-title="OULAMI 同伴项目 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 校园生活</p>
+  <p class="banner-kicker">OULAMI</p>
+  <h1>OULAMI 同伴项目</h1>
+  <p class="lead">交换生同伴社团的构成与联系方式。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <h3>关于 OULAMI</h3>
+  <p>原站页面的说明为：“OULAMI consists of 20 members in total, with 12 from the Seoul campus and 8 from the Yongin campus. New members are recruited every semester to continue the activities.”</p>
+  <p>中文说明：OULAMI 共有 20 名成员，其中 12 名来自首尔校区，8 名来自龙仁校区；每学期都会招募新成员，以延续社团活动。</p>
+
+  <h3>联系与关注</h3>
+  <p><a href="https://www.instagram.com/o__ulami/" target="_blank" rel="noopener">Instagram @o__ulami</a> · <a href="https://www.instagram.com/mju_international/" target="_blank" rel="noopener">Instagram @mju_international</a> · <a href="https://www.instagram.com/mju.exchange/" target="_blank" rel="noopener">Instagram @mju.exchange</a></p>
+  <p>亦可通过国际交流处邮箱 <a href="mailto:mju_inbound@mju.ac.kr">mju_inbound@mju.ac.kr</a> 咨询。</p>
+  <p>相关页面：<a href="#seoul-campus">首尔校区</a>、<a href="#yongin-campus">龙仁校区</a>、<a href="#gli">GLI 全球领导力项目</a>。</p>
+</div>
+</div></div><div class="site-page" data-page="gli" data-title="GLI 全球领导力项目 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 校园生活</p>
+  <p class="banner-kicker">GLI</p>
+  <h1>GLI 全球领导力项目</h1>
+  <p class="lead">全球领导力实习项目的指南文件。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <h3>全球领导力实习（G.L.I.）</h3>
+  <p>原站此页以图片与两份官方文件说明 Global Leader Internship（G.L.I.）项目；正文说明未以文字形式提供，因此本页只列出原站的文件入口。</p>
+
+  <div class="card-grid cols-2">
+    <a class="linkcard" href="https://drive.google.com/file/d/1WlyDKflU_9OaA-ffwSepiSqpD_d9C_jx/view?usp=sharing" target="_blank" rel="noopener">
+      <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6.5 3.6h7l4.5 4.5v12.3h-11.5z" stroke-linejoin="round"/><path d="M13.3 3.8v4.6h4.6"/></svg></span>
+      <h3>Global Leader Internship Guideline（PDF）</h3>
+      <p>项目指南文件。</p>
+      <p class="linkcard-url">Google Drive</p>
+    </a>
+    <a class="linkcard" href="https://drive.google.com/file/d/1yeaVs5gEkaqMVO6rS_kJ2Jukf8drwNJC/view?usp=drive_link" target="_blank" rel="noopener">
+      <span class="linkcard-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6.5 3.6h7l4.5 4.5v12.3h-11.5z" stroke-linejoin="round"/><path d="M13.3 3.8v4.6h4.6"/></svg></span>
+      <h3>Allowance Payment Agreement – Campus Student Leaders</h3>
+      <p>校区学生负责人津贴支付协议。</p>
+      <p class="linkcard-url">Google Drive</p>
+    </a>
+  </div>
+
+  <p>相关页面：<a href="#oulami">OULAMI 同伴项目</a>（OULAMI 同伴项目）、<a href="#seoul-campus">首尔校区</a>、<a href="#yongin-campus">龙仁校区</a>。</p>
+</div>
+</div></div><div class="site-page" data-page="cultural-activities" data-title="文化活动总览 | 交换生指南 · 明知大学">
+  <section class='pagehero'><div class='container'>
+    <p class='crumb'><a href='#index'>首页</a> / 文化活动</p>
+    <p class='banner-kicker'>CULTURAL ACTIVITIES</p>
+    <h1>文化活动总览</h1>
+    <p class='lead'>艺术治疗、跆拳道、运动游戏日与韩语辅导四类活动。</p>
+  </div></section>
+  <div class='container'><div class='prose'>
+<h3>学费与活动费</h3>
+<p>交换生在就读的每个学期可获得明知大学提供的学费减免。所有学生均须缴纳学生活动费；该费用一经缴纳，任何情况下都不予退还。</p>
+<h3>活动项目</h3>
+<ul>
+<li><strong>表现艺术治疗</strong>：制作韩国传统面具，并参与「五方色」仪式行走。</li>
+<li><strong>跆拳道</strong>：穿上道服（도복），跟随师范（사범님）学习跆拳道基础动作。</li>
+<li><strong>运动游戏日</strong>：与 OULAMI 学生支持者和其他交换生一起，通过各种游戏建立友谊。</li>
+<li><strong>韩语辅导</strong>：与明知大学在校学生组队，练习基础韩语会话与韩国文化。</li>
+</ul>
+<h3>分页查看</h3>
+<ul>
+<li><a href='#taekwondo'>跆拳道</a>：课堂实况与服装要求</li>
+<li><a href='#games-day'>运动游戏日</a>：活动形式与现场记录</li>
+<li><a href='#korean-tutoring'>韩语辅导</a>：面向对象、时间与结业条件</li>
+</ul><div class='notice'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' aria-hidden='true'><circle cx='12' cy='12' r='9'/><path d='M12 7.6h.01M11.2 11h1.4v5.2' stroke-linecap='round'/></svg><div><h3>说明</h3><p>本页译文依据英文原页《CULTURAL ACTIVITIES》整理。</p><p>原页以照片与影片记录活动，本站为中文文字版，未复制原站影像。</p></div></div>
+  </div></div>
+</div>
+<div class="site-page" data-page="taekwondo" data-title="跆拳道 | 交换生指南 · 明知大学">
+  <section class='pagehero'><div class='container'>
+    <p class='crumb'><a href='#index'>首页</a> / 文化活动</p>
+    <p class='banner-kicker'>TAEKWONDO</p>
+    <h1>跆拳道</h1>
+    <p class='lead'>穿上道服，跟随师范学习跆拳道基础动作。</p>
+  </div></section>
+  <div class='container'><div class='prose'>
+<h3>课程内容</h3>
+<p>在明知大学安排的师范（사범님）带领下，穿上跆拳道道服（도복），学习跆拳道的基础动作与礼仪。</p>
+<h3>原页影像</h3>
+<p>英文原页以两段影片记录课堂实况（附件文件名为 IMG_1693.MOV、IMG_1732.MOV，存放于 Google Drive）。本站为中文文字版，未复制这两段影片。</p><div class='notice'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' aria-hidden='true'><circle cx='12' cy='12' r='9'/><path d='M12 7.6h.01M11.2 11h1.4v5.2' stroke-linecap='round'/></svg><div><h3>提醒</h3><p>上课时间、地点与报名方式以国际交流处的通知为准。</p><p>本站未收录这两段影片。</p></div></div>
+  </div></div>
+</div>
+<div class="site-page" data-page="games-day" data-title="运动游戏日 | 交换生指南 · 明知大学">
+  <section class='pagehero'><div class='container'>
+    <p class='crumb'><a href='#index'>首页</a> / 文化活动</p>
+    <p class='banner-kicker'>GAMES DAY</p>
+    <h1>运动游戏日</h1>
+    <p class='lead'>与 OULAMI 学生支持者和其他交换生通过游戏建立友谊。</p>
+  </div></section>
+  <div class='container'><div class='prose'>
+<h3>活动形式</h3>
+<p>运动游戏日由 OULAMI 学生支持者与交换生共同参与，通过分组游戏互相熟悉、建立友谊。</p>
+<h3>原页影像</h3>
+<p>英文原页以多张活动照片与一段影片记录当天实况（影片附件名为 KakaoTalk_Video_2025-09-29-16-45-14.mp4）。本站为中文文字版，未复制这些影像。</p><div class='notice'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' aria-hidden='true'><circle cx='12' cy='12' r='9'/><path d='M12 7.6h.01M11.2 11h1.4v5.2' stroke-linecap='round'/></svg><div><h3>提醒</h3><p>活动日程与报名方式以国际交流处的通知为准。</p></div></div>
+  </div></div>
+</div>
+<div class="site-page" data-page="korean-tutoring" data-title="韩语辅导 | 交换生指南 · 明知大学">
+  <section class='pagehero'><div class='container'>
+    <p class='crumb'><a href='#index'>首页</a> / 文化活动</p>
+    <p class='banner-kicker'>KOREAN TUTORING</p>
+    <h1>韩语辅导</h1>
+    <p class='lead'>与明知大学学生结对，10 周内练习韩语会话与韩国文化。</p>
+  </div></section>
+  <div class='container'><div class='prose'>
+<h3>项目要点</h3><div class='table-wrap'><table class='info-table'><tbody><tr><th scope='row'>面向对象</th><td>全体交换生（必须参加）</td></tr><tr><th scope='row'>项目时间</th><td>3 月 – 6 月 / 9 月 – 12 月</td></tr><tr><th scope='row'>结对方式</th><td>1 名明知大学学生 + 2 名交换生（随机配对）</td></tr><tr><th scope='row'>见面次数</th><td>10 周内约见面 9 次</td></tr><tr><th scope='row'>主要内容</th><td>练习韩语会话与韩国文化</td></tr><tr><th scope='row'>提交要求</th><td>需提交活动报告与照片</td></tr><tr><th scope='row'>进行方式</th><td>线下见面</td></tr><tr><th scope='row'>结业条件</th><td>完成 9 次可获得结业证书</td></tr><tr><th scope='row'>配对通知</th><td>配对结果在学期第 2 周公布</td></tr></tbody></table></div><div class='notice'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' aria-hidden='true'><circle cx='12' cy='12' r='9'/><path d='M12 7.6h.01M11.2 11h1.4v5.2' stroke-linecap='round'/></svg><div><h3>说明</h3><p>本页译文依据英文原页《KOREAN TUTORING》。</p><p>实际次数、地点与结业条件以国际交流处通知为准。</p></div></div>
+  </div></div>
+</div>
+<div class="site-page" data-page="part-time-works" data-title="兼职打工 | 交换生指南 · 明知大学">
+  <section class='pagehero'><div class='container'>
+    <p class='crumb'><a href='#index'>首页</a> / 在韩生活</p>
+    <p class='banner-kicker'>PART-TIME WORKS</p>
+    <h1>兼职打工</h1>
+    <p class='lead'>D-2-6 签证持有者从事兼职须事先取得许可。</p>
+  </div></section>
+  <div class='container'><div class='prose'>
+<h3>基本要求</h3>
+<p>持 D-2-6 签证的留学生从事兼职（超出当前停留资格的活动）必须事先取得许可，条件分为学业成绩与语言能力两项。</p>
+<h4>1. 学业成绩</h4>
+<ul>
+<li>最低成绩：前一学期平均 GPA 达到 C（2.0）以上。</li>
+<li>出勤要求：前一学期整体出勤率 70% 以上。</li>
+<li>新生（在韩第 1 学期）：第 1 学期可豁免成绩与出勤要求。</li>
+</ul>
+<h4>2. 语言能力</h4><div class='table-wrap'><table class='info-table'><tbody><tr><th scope='row'>本科 1、2 年级</th><td>TOPIK 3 级以上 / KIIP 3 级+ / 事前评价 61 分以上 / 世宗学堂（KLP）中级 1 以上</td></tr><tr><th scope='row'>本科 3 年级以上及研究生</th><td>TOPIK 4 级以上 / KIIP 4 级+ / 事前评价 81 分以上 / 世宗学堂（KLP）中级 2 以上</td></tr><tr><th scope='row'>英文授课学生</th><td>TOEFL iBT 71（CBT 197）、IELTS 5.5、CEFR B2 或 NEW TEPS 327 以上；母语或官方语言为英语国家的学生免交</td></tr></tbody></table></div><p>语言证明只需提供上表所列任意一项有效证书。</p>
+<h3>允许的每周工时</h3>
+<p>英文原页在此处以表格图片给出每周允许工时。可确认的文字说明为：学期中实习只能在允许的兼职工时内进行（每周 20–30 小时，取决于语言能力）；假期期间可从事全职实习（每周 40 小时）。</p><div class='notice'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' aria-hidden='true'><circle cx='12' cy='12' r='9'/><path d='M12 7.6h.01M11.2 11h1.4v5.2' stroke-linecap='round'/></svg><div><h3>注意</h3><p>每周工时上限以韩国出入境管理部门与学校现行规定为准，开始工作前请向国际交流处确认。</p></div></div>
+<h3>所需材料</h3>
+<h4>学生需提交</h4>
+<ul>
+<li>留学生兼职确认书（由国际交流处出具，需雇主签名）</li>
+<li>护照复印件</li>
+<li>外国人登录证复印件</li>
+<li>成绩单</li>
+<li>韩语课程学生：TOPIK 成绩单 / KIIP 证书 / 世宗学堂 KLP 证书</li>
+<li>申请书</li>
+</ul>
+<h4>雇主需提交</h4>
+<ul>
+<li>营业执照复印件</li>
+<li>雇主身份证复印件</li>
+<li>标准劳动合同复印件（需含时薪、工作内容与工作时间）</li>
+</ul>
+<h3>申请流程</h3>
+<ol>
+<li><strong>准备材料</strong>：填写留学生兼职确认书，由学生与雇主双方签名。</li>
+<li><strong>学校审批</strong>：携全部材料到国际交流处，审核通过后由学校在确认书上加盖公章。</li>
+<li><strong>向出入境申报</strong>：将盖章后的确认书与其他材料提交至出入境事务所；可在 HiKorea 网站在线申请，或预约后到辖区出入境事务所现场办理。</li>
+<li><strong>开始工作</strong>：必须取得出入境管理部门的最终批准后才能开始工作。</li>
+</ol>
+<p>在线申报入口（韩国出入境 HiKorea，站外链接）：<a href='https://www.hikorea.go.kr/cvlappl/CvlapplStep1.pt' target='_blank' rel='noopener'>HiKorea 在线申请</a></p>
+<h3>禁止从事的行业</h3>
+<ul>
+<li>成人娱乐业：酒吧、沙龙等成人娱乐场所。</li>
+<li>赌博与投机业：赌场、赌博场所，以及兼营游戏机零售的场所。</li>
+<li>私人辅导：在家或补习班教授语言、提供私教课程。</li>
+<li>高端技术与研究：涉及产业机密保护的高科技行业或机构。</li>
+<li>个人服务业：住宿业、公共浴场、理发店、美容院。</li>
+<li>制造业与建筑业。</li>
+<li>配送服务业。</li>
+</ul>
+<h3>实习</h3>
+<ul>
+<li>专业领域实习：全职实习（每周 40 小时）仅限假期期间。</li>
+<li>学期中：仅可在允许的兼职工时内实习（每周 20–30 小时，取决于语言能力）。</li>
+<li>为取得学分参与研究项目并领取一定津贴，或参与校内学生奖学金，则无需另行申请许可。</li>
+<li>可从事的工作限于按社会常规留学生可以承担的范围。</li>
+</ul>
+<h3>工作地点变更与限制</h3>
+<ul>
+<li>需重新许可：更换工作场所或增加第二份工作，须按首次申请同样的流程重新申请（学校审批，再向出入境申报）。</li>
+<li>15 日规则：工作地址、商号等发生变更，须在变更后 15 日内向出入境事务所申报。</li>
+<li>最长有效期：每次许可最长 1 年（且不超过停留期），期满继续工作需申请续期。</li>
+<li>工作场所数量：同时最多可在 2 处工作场所工作。</li>
+<li>总工时：两份工作的合计工时不得超过每周许可上限。</li>
+</ul>
+<h3>违规处理</h3>
+<ul>
+<li>第 1 次违规：1 年内禁止从事任何兼职。</li>
+<li>第 2 次违规：在韩留学期间永久禁止从事任何兼职。</li>
+<li>第 3 次违规：取消留学资格（D-2 签证），并被遣送出境。</li>
+</ul>
+<p>未向出入境申报而被发现从事非法兼职的，将被处以罚款。</p><div class='notice'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' aria-hidden='true'><circle cx='12' cy='12' r='9'/><path d='M12 7.6h.01M11.2 11h1.4v5.2' stroke-linecap='round'/></svg><div><h3>说明</h3><p>本页译文依据英文原页《Part-time works》。</p><p>许可条件、工时上限与材料清单可能随政策调整，请以出入境管理部门及国际交流处的最新通知为准。</p></div></div>
+  </div></div>
+</div>
+<div class="site-page" data-page="rc-resident-card" data-title="外国人登录证（RC） | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 在韩生活</p>
+  <p class="banner-kicker">RC (RESIDENT CARD)</p>
+  <h1>外国人登录证（RC）</h1>
+  <p class="lead">与 RC 相关的签证、保险与日程要点。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M12 10.8v5.2" stroke-linecap="round"/><circle cx="12" cy="8" r=".9" fill="currentColor" stroke="none"/></svg>
+    <div>
+      <h3>本页由相关页面已核实的信息汇总</h3>
+      <p>原站 RC 页面的正文未能读取，因此本页不转写其办理流程与材料清单；以下要点均来自本站其他已翻译页面，并标注了来源页面，可逐条核对。</p>
+    </div>
+  </div>
+
+  <h3>与签证的关系</h3>
+  <p>使馆或领事馆签发的学生签证是“单次入境”签证，只有在韩国取得 RC 之后才能转换为多次入境签证；签证上的 “multiple” 字样表示取得 RC 后具备更换为多次入境签证的资格。首次持该签证入境韩国，以及在取得 RC 之前的任何国际旅行，都需要格外留意。（来源：<a href="#visa-checklist">签证核对清单 · 签证核对清单</a>）</p>
+  <p>如果没有有效的外国人登录证，从韩国离境时 D-2 签证即失效。（来源：<a href="#visa-info">签证信息 · 签证信息</a>）</p>
+
+  <h3>与健康保险的关系</h3>
+  <p>所有国际学生在申请 RC（原名 ARC）后，将自动加入国民健康保险服务（NHIS）；登记处理需要几周时间，在此期间不受 NHIS 保障，需自备单独的健康或旅行保险。（来源：<a href="#nhis">国民健康保险 · 国民健康保险（NHIS）</a>）</p>
+  <p>申请 NHIS 免加入时，须先在出入境完成登记并取得居留号码，之后才能提交豁免申请。（来源：<a href="#nhis">国民健康保险 · 国民健康保险（NHIS）</a>）</p>
+
+  <h3>与日程通知的关系</h3>
+  <p>RC 等行事历以外的安排，会通过邮件通知，请留意邮箱。（来源：<a href="#academic-calendar">行事历 · 行事历</a>）</p>
+
+  <h3>原页正文</h3>
+  <p>RC 的具体办理流程、所需材料与时间安排，请打开查看。</p>
+</div>
+</div></div><div class="site-page" data-page="immigration" data-title="出入境事务 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 在韩生活</p>
+  <p class="banner-kicker">IMMIGRATION</p>
+  <h1>出入境事务</h1>
+  <p class="lead">停留期限延长与出入境登记要点。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M12 10.8v5.2" stroke-linecap="round"/><circle cx="12" cy="8" r=".9" fill="currentColor" stroke="none"/></svg>
+    <div>
+      <h3>本页由相关页面已核实的信息汇总</h3>
+      <p>原站出入境事务页面的正文未能读取，因此本页不转写其办理流程与材料清单；以下要点均来自本站其他已翻译页面，并标注了来源页面，可逐条核对。</p>
+    </div>
+  </div>
+
+  <h3>停留期限的延长</h3>
+  <p>如果你在项目开始前提前入境韩国，获发的停留期限可能无法覆盖到项目结束；这种情况下，需要前往韩国当地的出入境管理机关申请延长停留期限。（来源：<a href="#visa-info">签证信息 · 签证信息</a>）</p>
+
+  <h3>出入境登记与保险</h3>
+  <p>若要申请 NHIS 免加入，必须先在出入境完成登记并取得居留号码，之后才能向 NHIS 提交豁免申请，且申请不一定会获批准。（来源：<a href="#nhis">国民健康保险 · 国民健康保险（NHIS）</a>）</p>
+
+  <h3>离境的影响</h3>
+  <p>D-2 签证会在你首次入境韩国时被使用；若没有有效的外国人登录证（RC），从韩国离境时该签证即失效，需要重新申请签证。（来源：<a href="#visa-info">签证信息 · 签证信息</a>）</p>
+
+  <h3>原页正文</h3>
+  <p>出入境事务的具体办理流程、所需材料与地点，请打开查看。</p>
+  <p>相关页面：<a href="#rc-resident-card">外国人登录证（RC）</a>、<a href="#nhis">国民健康保险 · 国民健康保险（NHIS）</a>、<a href="#emergency">紧急联系</a>。</p>
+</div>
+</div></div><div class="site-page" data-page="emergency" data-title="紧急联系 | 交换生指南 · 明知大学">
+  <section class='pagehero'><div class='container'>
+    <p class='crumb'><a href='#index'>首页</a> / 在韩生活</p>
+    <p class='banner-kicker'>EMERGENCY</p>
+    <h1>紧急联系</h1>
+    <p class='lead'>韩国紧急电话与 24 小时药店查询方式。</p>
+  </div></section>
+  <div class='container'><div class='prose'>
+<h3>紧急电话</h3><div class='table-wrap'><table class='info-table'><tbody><tr><th scope='row'>119</th><td>消防、救护车及任何医疗急救</td></tr><tr><th scope='row'>112</th><td>举报犯罪、事故，或感到自身受到威胁时</td></tr></tbody></table></div><h3>语言支持</h3><ul><li>119：立即出动，提供英语支持。</li><li>112：立即响应，可进行基本英语沟通。</li></ul><h3>药店信息</h3><p>需要夜间买药时，可在 Naver 地图中搜索「24 小时药店（24-hour pharmacy）」，查找附近的 24 小时营业药店。</p><div class='notice'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' aria-hidden='true'><circle cx='12' cy='12' r='9'/><path d='M12 7.6h.01M11.2 11h1.4v5.2' stroke-linecap='round'/></svg><div><h3>提醒</h3><p>遇到紧急情况请先拨打 119 或 112。</p><p>本页信息依据英文原页《EMERGENCY》整理。</p></div></div>
+  </div></div>
+</div>
+<div class="site-page" data-page="apps" data-title="常用 App | 交换生指南 · 明知大学">
+  <section class='pagehero'><div class='container'>
+    <p class='crumb'><a href='#index'>首页</a> / 在韩生活</p>
+    <p class='banner-kicker'>APPS</p>
+    <h1>常用 App</h1>
+    <p class='lead'>在韩生活常用的社交、交通、地图、翻译、外卖与购物应用。</p>
+  </div></section>
+  <div class='container'><div class='prose'>
+<h3>社交</h3>
+<p><strong>KakaoTalk</strong>：免费即时通讯应用，支持智能手机、PC 与笔记本电脑，是韩国最常用的沟通工具。注册需要可接收验证短信的有效手机号码，建议在入境韩国前先在本国完成注册。</p>
+<h3>交通</h3>
+<p><strong>Kakao Bus、Kakao Metro、Kakao Taxi、Seoul Bike（따릉이）</strong>：均提供韩文与英文界面。原页提示 Google 地图在韩国可能无法提供准确路线，建议改用上述应用；各应用功能不同，建议全部安装。</p>
+<h3>地图</h3>
+<p><strong>Kakao Map、Naver Map</strong>：受政府规定限制，Google 地图在韩国不提供完整导航服务，如需更准确的路线建议使用 Naver 地图或 Kakao 地图。</p>
+<h3>翻译</h3>
+<p><strong>Papago</strong>：原页指出 Google 翻译在韩国给出的结果不够准确，建议改用 Papago，译文更自然。</p>
+<h3>外卖</h3>
+<p><strong>Coupang Eats、Baemin</strong>：在韩国使用外卖服务最常用的两个应用，功能与 Uber Eats 类似。</p>
+<h3>购物</h3>
+<p><strong>Coupang</strong>：韩国最流行的网上购物平台之一，可购买生活用品、生鲜食品与电子产品，配送速度快。</p><div class='notice'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' aria-hidden='true'><circle cx='12' cy='12' r='9'/><path d='M12 7.6h.01M11.2 11h1.4v5.2' stroke-linecap='round'/></svg><div><h3>说明</h3><p>以上内容依据英文原页《APPS》整理。</p><p>如需安装，可在 App Store 或 Google Play 中搜索下列应用名称。</p></div></div>
+  </div></div>
+</div>
+<div class="site-page" data-page="transportation" data-title="交通出行 | 交换生指南 · 明知大学">
+<section class="pagehero"><div class="container">
+  <p class="crumb"><a href="#index">首页</a> / 在韩生活</p>
+  <p class="banner-kicker">TRANSPORTATION</p>
+  <h1>交通出行</h1>
+  <p class="lead">T-money、地铁、公交与出租车票价。</p>
+  
+</div></section>
+<div class="container"><div class="prose">
+  <h3>T-money</h3>
+  <ul>
+    <li>T-money 是韩国使用最广泛的交通预付卡，可在全国大部分地区的公交、地铁与出租车上使用，并提供公交与地铁之间的换乘优惠。不过请注意，部分农村地区可能无法使用。</li>
+    <li>T-money 卡可在地铁站与便利店购买，使用前需先充值。</li>
+    <li>乘客在公交与地铁之间换乘时，只需支付额外费用，无需再次支付全额基本票价。乘坐公交时，上车与下车都请记得刷卡。</li>
+  </ul>
+
+  <h3>地铁</h3>
+  <p>首尔首都圈、釜山、大邱、大田与光州拥有密集的地铁网络；首尔首都圈地铁延伸至仁川、京畿道、江原道与忠清南道的部分地区。</p>
+  <p>基本票价因地区而异，并会根据总乘车距离加收费用。</p>
+  <div class="table-wrap">
+    <table class="info-table">
+      <tbody>
+        <tr><th>首尔地铁基本票价 · 单程票</th><td>1,500 韩元</td></tr>
+        <tr><th>首尔地铁基本票价 · 交通卡</th><td>1,400 韩元</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>公交</h3>
+  <p>公交可以到达地铁无法覆盖的小区域。首尔等大城市的主要道路设有公交专用道，即使交通拥堵时也能准点运行。</p>
+  <div class="table-wrap">
+    <table class="info-table">
+      <tbody>
+        <tr><th>蓝色与绿色公交（市内或区域内运行）</th><td>1,500 韩元</td></tr>
+        <tr><th>红色公交（首尔・仁川・京畿道之间的市际与快速线路）</th><td>3,000 韩元</td></tr>
+        <tr><th>夜间公交（首尔主要市中心区域，午夜至凌晨 5 点运行）</th><td>2,500 韩元</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>出租车</h3>
+  <p>出租车 24 小时均可搭乘。基本票价因地区而异，晚 11 点至凌晨 4 点加收深夜附加费。出租车分为标准型、豪华型与大型（Jumbo）三类。</p>
+  <p>首尔基本票价：首 1.6 公里 4,800 韩元。</p>
+  <p>国际出租车（International Taxi）由能使用英语、中文或日语的司机运营，往返于仁川国际机场与首尔之间，按区域收取固定费率；目的地为首尔郊区时加收 20% 附加费。</p>
+  <p><a href="http://www.intltaxi.co.kr/" target="_blank" rel="noopener">www.intltaxi.co.kr</a></p>
+</div>
+</div></div><div class="site-page" data-page="counseling-options-in-seoul" data-title="首尔心理咨询资源 | 交换生指南 · 明知大学">
+  <section class='pagehero'><div class='container'>
+    <p class='crumb'><a href='#index'>首页</a> / 在韩生活</p>
+    <p class='banner-kicker'>COUNSELING OPTIONS</p>
+    <h1>首尔心理咨询资源</h1>
+    <p class='lead'>校内咨询中心仅提供韩语，以下为首尔地区英语心理咨询机构。</p>
+  </div></section>
+  <div class='container'><div class='prose'>
+<p>明知大学设有校内心理咨询中心，但仅提供韩语服务。如需协助或持续咨询，可联系下列提供英语服务的机构。</p>
+<h3>1. Seoul Counseling Center</h3><div class='table-wrap'><table class='info-table'><tbody><tr><th scope='row'>地址</th><td>首尔麻浦区麻浦大路 109 号 Lotte Castle President 31 楼 3103 室（孔德站附近）</td></tr><tr><th scope='row'>网站</th><td><a href='https://seoulcounseling.com/' target='_blank' rel='noopener'>seoulcounseling.com</a></td></tr><tr><th scope='row'>语言支持</th><td>英语、希伯来语、西班牙语</td></tr><tr><th scope='row'>服务范围</th><td>个人 / 伴侣 / 家庭咨询，以及多动症、焦虑、抑郁、压力等</td></tr><tr><th scope='row'>形式</th><td>线下与线上</td></tr><tr><th scope='row'>预约</th><td>需提前预约</td></tr><tr><th scope='row'>费用</th><td>为保证专业服务质量，收取象征性服务费</td></tr><tr><th scope='row'>邮箱</th><td>support@seoulcounseling.com</td></tr><tr><th scope='row'>电话</th><td>02-542-5553</td></tr><tr><th scope='row'>时间</th><td>周二至周五 11:30–20:30 / 周六 08:30–17:30</td></tr></tbody></table></div><h3>2. 首尔全球中心（Seoul Global Center）</h3><div class='table-wrap'><table class='info-table'><tbody><tr><th scope='row'>地址</th><td>首尔钟路区钟路 38 号首尔全球中心 4–5 楼（钟阁站附近）</td></tr><tr><th scope='row'>网站</th><td><a href='https://global.seoul.go.kr/web/cent/segc/centInfoPage.do?cent_cd=01' target='_blank' rel='noopener'>首尔全球中心官网</a></td></tr><tr><th scope='row'>语言支持</th><td>英语、中文、俄语</td></tr><tr><th scope='row'>服务范围</th><td>签证与出入境事务、法律服务、税务与会计咨询</td></tr><tr><th scope='row'>形式</th><td>线下与线上</td></tr><tr><th scope='row'>预约</th><td>需提前预约</td></tr><tr><th scope='row'>费用</th><td>部分咨询免费</td></tr><tr><th scope='row'>邮箱</th><td>globalcenterseoul@gmail.com</td></tr><tr><th scope='row'>电话</th><td>02-2075-4149</td></tr><tr><th scope='row'>时间</th><td>周二至周五 11:30–20:30 / 周六 08:30–17:30</td></tr></tbody></table></div><h3>3. You &amp; Me Psychological Counseling Services</h3><div class='table-wrap'><table class='info-table'><tbody><tr><th scope='row'>地址</th><td>首尔钟路区义城宫路 68 号 3 楼（安国站附近）</td></tr><tr><th scope='row'>网站</th><td><a href='https://www.ypcskorea.com/' target='_blank' rel='noopener'>ypcskorea.com</a></td></tr><tr><th scope='row'>语言支持</th><td>英语、法语、中文、日语</td></tr><tr><th scope='row'>服务范围</th><td>抑郁、焦虑、人际关系困难等</td></tr><tr><th scope='row'>形式</th><td>线下与线上</td></tr><tr><th scope='row'>预约</th><td>需提前预约</td></tr><tr><th scope='row'>费用</th><td>为保证专业服务质量，收取象征性服务费</td></tr><tr><th scope='row'>邮箱</th><td>admin@ypcskorea.com</td></tr><tr><th scope='row'>电话</th><td>02-6929-3014</td></tr><tr><th scope='row'>时间</th><td>周一至周五 09:00–21:00 / 周六 10:00–16:30</td></tr></tbody></table></div><h3>4. 首尔外国居民中心（Seoul Foreign Resident Center）</h3><div class='table-wrap'><table class='info-table'><tbody><tr><th scope='row'>地址</th><td>首尔永登浦区道新路 40 号（新道林站附近）</td></tr><tr><th scope='row'>网站</th><td><a href='https://global.seoul.go.kr/web/cent/swgc/centInfoPage.do?cent_cd=02' target='_blank' rel='noopener'>首尔外国居民中心官网</a></td></tr><tr><th scope='row'>语言支持</th><td>英语、中文、越南语、蒙古语、俄语</td></tr><tr><th scope='row'>服务范围</th><td>专业心理咨询、韩语教育</td></tr><tr><th scope='row'>形式</th><td>线下</td></tr><tr><th scope='row'>预约</th><td>需提前预约</td></tr><tr><th scope='row'>费用</th><td>部分咨询免费</td></tr><tr><th scope='row'>邮箱</th><td>hotline@sfrc.seoul.kr</td></tr><tr><th scope='row'>电话</th><td>02-2229-4900</td></tr><tr><th scope='row'>时间</th><td>周一至周五 10:00–17:30 / 周日 10:00–17:30</td></tr></tbody></table></div><div class='notice'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' aria-hidden='true'><circle cx='12' cy='12' r='9'/><path d='M12 7.6h.01M11.2 11h1.4v5.2' stroke-linecap='round'/></svg><div><h3>说明</h3><p>以上机构信息依据英文原页《Counseling Options in Seoul》整理。</p><p>咨询机构官网均为站外链接；费用与营业时间可能变动，请以机构官网为准。</p></div></div>
+  </div></div>
+</div>
+<footer class="pagefoot" id="contact"><div class="container">
+  <div class="foot-top">
+    <span class="brand"><span class="brand-mark">MJU</span><span class="brand-text"><span class="brand-name">交换生指南</span><span class="brand-sub">Exchange Student Guide · 中文版</span></span></span>
+    <span class="foot-links">
+      <a href="#index">首页</a>
+      
+      <a href="https://international.mju.ac.kr/index.php?sMenu=kor" target="_blank" rel="noopener">国际交流处官网</a>
+    </span>
+  </div>
+  <div class="foot-grid">
+    <div>
+      <h3>SEOUL CAMPUS</h3>
+      <p>Office of International Affairs, 34 Geobukgol-ro, Seodaemun-gu, Seoul, 03674, KOREA</p>
+      <p>E-mail: <a href="mailto:mju_inbound@mju.ac.kr">mju_inbound@mju.ac.kr</a></p>
+    </div>
+    <div>
+      <h3>YONGIN CAMPUS</h3>
+      <p>Office of International Students Support Team, 116 Myongji-ro, Cheoin-gu, Yongin-si, Gyeonggi-do, 17058, KOREA</p>
+    </div>
+    <div>
+      <h3>关于本页</h3>
+      <p>本站为明知大学英文交换生指南（Google Sites）的中文版，版式与配色对齐原站，栏目链接指向本中文站对应页面。</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>Exchange Student Guide · 中文版</span>
+    
+  </div>
+</div><p>本站全部栏目的链接都在中文站内打开；页面译文以明知大学英文原站的对应页面为依据。</p>
+</footer>
+<button class="totop" type="button" data-totop hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 19V6M6 11.5 12 5.5l6 6" stroke-linecap="round" stroke-linejoin="round"/></svg> 回到顶部</button>
+<script>
+(function () {
+  'use strict';
+  var INDEX = [{"t": "入学手续", "n": "入学手续", "e": "ADMISSION", "u": "admission.html", "s": "行前准备"}, {"t": "签证核对清单", "n": "签证核对清单", "e": "VISA CHECKLIST", "u": "visa-checklist.html", "s": "行前准备"}, {"t": "交换生签证", "n": "交换生签证", "e": "EXCHANGE STUDENT VISA", "u": "exchange-student-visa.html", "s": "行前准备"}, {"t": "签证信息", "n": "签证信息", "e": "VISA INFO", "u": "visa-info.html", "s": "行前准备"}, {"t": "住宿", "n": "住宿", "e": "HOUSING", "u": "housing.html", "s": "行前准备"}, {"t": "国民健康保险（NHIS）", "n": "国民健康保险", "e": "NHIS (NATIONAL HEALTH INSURANCE)", "u": "nhis.html", "s": "行前准备"}, {"t": "行事历", "n": "行事历", "e": "ACADEMIC CALENDAR", "u": "academic-calendar.html", "s": "学业"}, {"t": "MSI（课程大纲与课表）", "n": "MSI（课表）", "e": "MSI (SYLLABUS & TIMETABLE)", "u": "msi.html", "s": "学业"}, {"t": "成绩与学分", "n": "成绩与学分", "e": "GRADINGS & CREDITS", "u": "gradins-credits.html", "s": "学业"}, {"t": "课程大纲（26 秋季）", "n": "课程大纲（26 秋季）", "e": "SYLLABUS (26 FALL)", "u": "syllabus26-fall.html", "s": "学业"}, {"t": "选课流程", "n": "选课流程", "e": "COURSE REGISTRATION", "u": "course-registration.html", "s": "学业"}, {"t": "课程列表", "n": "课程列表", "e": "COURSE LIST", "u": "course-list.html", "s": "学业"}, {"t": "MJU 常用 App 与网站", "n": "常用 App 与网站", "e": "MJU ESSENTIAL APP & SITES", "u": "mju-essential-app-sites.html", "s": "学业"}, {"t": "法定假日", "n": "法定假日", "e": "NATIONAL HOLIDAYS", "u": "national-holidays.html", "s": "学业"}, {"t": "KLEC 韩语中心", "n": "KLEC 韩语中心", "e": "KLEC", "u": "klec.html", "s": "学业"}, {"t": "首尔校区", "n": "首尔校区", "e": "SEOUL CAMPUS", "u": "seoul-campus.html", "s": "校园生活"}, {"t": "龙仁校区", "n": "龙仁校区", "e": "YONGIN CAMPUS", "u": "yongin-campus.html", "s": "校园生活"}, {"t": "OULAMI 同伴项目", "n": "OULAMI", "e": "OULAMI", "u": "oulami.html", "s": "校园生活"}, {"t": "GLI 全球领导力项目", "n": "GLI", "e": "GLI", "u": "gli.html", "s": "校园生活"}, {"t": "文化活动总览", "n": "文化活动总览", "e": "CULTURAL ACTIVITIES", "u": "cultural-activities.html", "s": "文化活动"}, {"t": "跆拳道", "n": "跆拳道", "e": "TAEKWONDO", "u": "taekwondo.html", "s": "文化活动"}, {"t": "运动游戏日", "n": "运动游戏日", "e": "GAMES DAY", "u": "games-day.html", "s": "文化活动"}, {"t": "韩语辅导", "n": "韩语辅导", "e": "KOREAN TUTORING", "u": "korean-tutoring.html", "s": "文化活动"}, {"t": "兼职打工", "n": "兼职打工", "e": "PART-TIME WORKS", "u": "part-time-works.html", "s": "在韩生活"}, {"t": "外国人登录证（RC）", "n": "外国人登录证", "e": "RC (RESIDENT CARD)", "u": "rc-resident-card.html", "s": "在韩生活"}, {"t": "出入境事务", "n": "出入境事务", "e": "IMMIGRATION", "u": "immigration.html", "s": "在韩生活"}, {"t": "紧急联系", "n": "紧急联系", "e": "EMERGENCY", "u": "emergency.html", "s": "在韩生活"}, {"t": "常用 App", "n": "常用 App", "e": "APPS", "u": "apps.html", "s": "在韩生活"}, {"t": "交通出行", "n": "交通出行", "e": "TRANSPORTATION", "u": "transportation.html", "s": "在韩生活"}, {"t": "首尔心理咨询资源", "n": "首尔心理咨询资源", "e": "COUNSELING OPTIONS IN SEOUL", "u": "counseling-options-in-seoul.html", "s": "在韩生活"}, {"t": "首页", "n": "首页", "e": "HOME", "u": "index.html", "s": "首页"}];
+  var drawer = document.querySelector('[data-drawer]');
+  var scrim = document.querySelector('[data-drawer-scrim]');
+  var openBtn = document.querySelector('[data-nav-open]');
+  function setDrawer(open) {
+    if (!drawer) return;
+    if (open) { drawer.classList.add('is-open'); } else { drawer.classList.remove('is-open'); }
+    drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+    if (scrim) scrim.hidden = !open;
+    if (open) {
+      document.body.classList.add('no-scroll');
+      var first = drawer.querySelector('a, button');
+      if (first) first.focus();
+    } else {
+      document.body.classList.remove('no-scroll');
+      if (openBtn) openBtn.focus();
+    }
+    if (openBtn) openBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  if (openBtn) openBtn.addEventListener('click', function () { setDrawer(true); });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-nav-close]'), function (el) {
+    el.addEventListener('click', function () { setDrawer(false); });
+  });
+  if (scrim) scrim.addEventListener('click', function () { setDrawer(false); });
+  Array.prototype.forEach.call(document.querySelectorAll('.drawer-group'), function (btn) {
+    btn.addEventListener('click', function () {
+      var sub = document.getElementById(btn.getAttribute('aria-controls'));
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      if (sub) {
+        if (open) { sub.classList.remove('is-open'); } else { sub.classList.add('is-open'); }
+      }
+    });
+  });
+  var searchPanel = document.querySelector('[data-search-panel]');
+  var searchBtn = document.querySelector('[data-search-btn]');
+  var searchInput = document.querySelector('[data-search-input]');
+  var searchForm = document.querySelector('[data-search-form]');
+  var searchResults = document.querySelector('[data-search-results]');
+  var filesNotice = document.querySelector('[data-tools-hint]');
+  function setPanel(panel, open) { if (panel) panel.hidden = !open; }
+  if (searchBtn) searchBtn.addEventListener('click', function () {
+    var willOpen = searchPanel ? searchPanel.hidden : false;
+    setPanel(searchPanel, willOpen);
+    if (willOpen && searchInput) searchInput.focus();
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-search-close]'), function (el) {
+    el.addEventListener('click', function () { setPanel(searchPanel, false); if (searchBtn) searchBtn.focus(); });
+  });
+  var filesBtn = document.querySelector('[data-files-btn]');
+  if (filesBtn) filesBtn.addEventListener('click', function () {
+    if (filesNotice) {
+      filesNotice.textContent = '本站为中文翻译版；原站嵌入的影片与文件未收录在本站内。';
+      alert('原站嵌入的文件（视频、PDF、表格等）不在本中文站内，如需查看附件，请在浏览器中直接打开明知大学英文原站。');
+    }
+  });
+  function render(q) {
+    if (!searchResults) return;
+    var needle = q.trim().toLowerCase();
+    searchResults.textContent = '';
+    if (!needle) {
+      var p0 = document.createElement('p');
+      p0.className = 'searchhint';
+      p0.textContent = '输入关键字后按回车，结果会列在这里。';
+      searchResults.appendChild(p0);
+      return;
+    }
+    var hits = INDEX.filter(function (it) {
+      return (it.t + it.n + it.e + it.s).toLowerCase().indexOf(needle) !== -1;
+    });
+    if (!hits.length) {
+      var p1 = document.createElement('p');
+      p1.className = 'searchhint';
+      p1.textContent = '没有找到“' + q + '”对应的页面，可以试试 Visa、Housing、Calendar 等英文原页名。';
+      searchResults.appendChild(p1);
+      return;
+    }
+    var list = document.createElement('ul');
+    list.className = 'searchlist';
+    hits.slice(0, 12).forEach(function (it) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + String(it.u).replace(/\.html$/, '');
+      a.textContent = it.s + ' · ' + it.n;
+      var sp = document.createElement('span');
+      sp.className = 'searchmeta';
+      sp.textContent = it.e;
+      li.appendChild(a);
+      li.appendChild(sp);
+      list.appendChild(li);
+    });
+    searchResults.appendChild(list);
+  }
+  if (searchForm) searchForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    render(searchInput ? searchInput.value : '');
+  });
+  if (searchInput) searchInput.addEventListener('input', function () {
+    if (!searchInput.value) render('');
+  });
+  var toTop = document.querySelector('[data-totop]');
+  function onScroll() { if (toTop) toTop.hidden = window.scrollY < 520; }
+  if (toTop) {
+    toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { setDrawer(false); setPanel(searchPanel, false); }
+  });
+})();
+</script>
+
+(function () {
+  'use strict';
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('.site-page'));
+  var byId = {};
+  nodes.forEach(function (n) { byId[n.getAttribute('data-page')] = n; });
+  var baseTitle = document.title;
+  function show(id, isHash) {
+    var target = byId[id];
+    if (!target) { return false; }
+    nodes.forEach(function (n) { n.classList.toggle('is-active', n === target); });
+    document.title = target.getAttribute('data-title') || baseTitle;
+    if (isHash) window.scrollTo({ top: 0, behavior: 'auto' });
+    var links = document.querySelectorAll('nav.mainnav a, .drawer a, .quick-item, .linkcard');
+    Array.prototype.forEach.call(links, function (a) {
+      var href = a.getAttribute('href') || '';
+      if (href.charAt(0) === '#') a.setAttribute('data-active', href.slice(1) === id ? 'true' : 'false');
+    });
+    return true;
+  }
+  function route(fromHashChange) {
+    var raw = (location.hash || '#home').slice(1);
+    var id = raw.replace(/[^A-Za-z0-9-]/g, '');
+    if (byId[id]) { show(id, fromHashChange); return; }
+    var el = document.getElementById(id);
+    if (el && el.scrollIntoView) el.scrollIntoView();
+  }
+  window.addEventListener('hashchange', function () { route(true); });
+  route(false);
+})();
+<script>
+(function () {
+  'use strict';
+  var pages = Array.prototype.slice.call(document.querySelectorAll('.site-page'));
+  var map = {};
+  Array.prototype.forEach.call(pages, function (p) {
+    var k = p.getAttribute('data-page');
+    if (k) { map[k] = p; }
+  });
+  var HOME = 'index';
+  function has(n) { return Object.prototype.hasOwnProperty.call(map, n); }
+  function show(n) {
+    Array.prototype.forEach.call(pages, function (p) {
+      if (p.getAttribute('data-page') === n) { p.classList.add('is-active'); } else { p.classList.remove('is-active'); }
+    });
+    var t = map[n].getAttribute('data-title');
+    if (t) { document.title = t; }
+    window.scrollTo(0, 0);
+  }
+  function route() {
+    var raw = location.hash ? location.hash.slice(1) : '';
+    var h = raw;
+    try { h = decodeURIComponent(raw); } catch (e) { h = raw; }
+    if (h && has(h)) { show(h); } else if (!h) { show(HOME); }
+  }
+  route();
+  window.addEventListener('hashchange', route);
+})();
+</script>
+</body>
+</html>
